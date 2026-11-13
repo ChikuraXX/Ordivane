@@ -1,0 +1,159 @@
+openapi: 3.1.0
+info:
+  title: 身份、会话与错误契约
+  version: 1.0.0
+  description: |
+    BE-020 已实现契约。人类采用同源 HttpOnly、SameSite=Strict 的 JSESSIONID Cookie；
+    无 Remember-Me、HTTP Basic、跨域凭据或角色继承。会话空闲30分钟失效。
+    非local环境Cookie默认Secure=true，必须使用HTTPS；local为本机HTTP。
+    请求只接受服务端数据库中的身份和角色，不接受客户端提交角色或当前主体ID。
+    人类链出现Authorization头即401，不能把来源密钥用于登录或复用人类会话。
+    登录前GET csrf，POST登录；登录成功后重新GET csrf，再提交会话写操作及退出。
+    所有响应含服务端生成的X-Trace-Id，所有错误含code/message/traceId，不返回栈或凭据。
+    格式错误400、方法不支持405等框架4xx保留HTTP状态，使用INVALID_REQUEST安全错误体。
+    错误的登录密码（包括超过BCrypt可接受长度）统一401，不作为内部错误。
+    本任务不实现失败报告业务API。后续BE-030的/api/v1/failure-reports及子资源已保留独立来源鉴权链：
+    Authorization: Bearer <随机高熵密钥>，每次查access_source启用状态，不接受人类会话、不创建会话、
+    无CSRF要求。业务必须调用AccessPolicy.requireSource(声明来源)核对来源再持久化。
+    来源密钥至少32个随机可打印ASCII字符；仅存SHA-256摘要，不能当作人类密码。
+    观察者仅查看，操作员可操作但不能审批，审批人可审批但不能操作；三个角色互不继承。
+    后续业务在执行边界调用requireOperator或requireOtherApprover(持久化申请人UUID)，
+    不能从请求中取申请人来绕过他人审批。禁用、降权、密码变更使旧人类会话下次请求失效。
+    本任务的鉴权测试业务路由仅存在于src/test，不是可用的生产业务API。
+    AuditService.record使用独立事务追加主体/动作/对象/结果/traceId，业务回滚不删除失败审计；
+    写审计失败向调用者传播。成功审计应在业务提交成功后记录，不能用独立审计事务冒充业务提交。
+servers:
+  - url: /
+tags:
+  - name: access
+    description: 人类登录与同源会话
+paths:
+  /api/v1/access/csrf:
+    get:
+      tags: [access]
+      operationId: getSessionCsrf
+      summary: 获取当前会话的CSRF提交头名和掩码token
+      description: 允许匿名；必要时创建会话。token不可跨会话使用，登录后旧token失效。响应禁止缓存。
+      security: []
+      responses:
+        '200':
+          description: 当前会话CSRF，字段不为null
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [headerName, token]
+                properties:
+                  headerName: {type: string, const: X-CSRF-TOKEN}
+                  token: {type: string, minLength: 1, description: 掩码值，按原样提交，不持久化或记录日志}
+        '401': {$ref: '#/components/responses/Unauthenticated'}
+        '500': {$ref: '#/components/responses/InternalError'}
+  /api/v1/access/login:
+    post:
+      tags: [access]
+      operationId: createHumanSession
+      summary: 验证人类账号并创建会话
+      description: |
+        成功204无响应体；登录时轮换会话ID并清除旧CSRF，随后GET me/GET csrf。
+        不接收role；额外字段不授予权限。无公共默认账号或密码。
+        失败统一401，不区分用户名不存在、密码错误或账号禁用。
+      security: []
+      parameters:
+        - {$ref: '#/components/parameters/Csrf'}
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username: {type: string, minLength: 1, maxLength: 128, description: 唯一人类登录名}
+                password: {type: string, format: password, writeOnly: true, description: 人类密码，不作为来源凭据}
+      responses:
+        '204':
+          description: 登录成功；响应Set-Cookie携带会话，保留浏览器同源Cookie即可
+        '401': {$ref: '#/components/responses/Unauthenticated'}
+        '403': {$ref: '#/components/responses/Forbidden'}
+        '500': {$ref: '#/components/responses/InternalError'}
+  /api/v1/access/me:
+    get:
+      tags: [access]
+      operationId: getCurrentHumanIdentity
+      summary: 获取经过后端校验的当前人类身份
+      security: [{humanSession: []}]
+      responses:
+        '200':
+          description: 当前有效账号，所有字段非null
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [id, username, role]
+                properties:
+                  id: {type: string, format: uuid, description: 不可变用户ID，不能由客户端替换}
+                  username: {type: string, minLength: 1, maxLength: 128}
+                  role: {type: string, enum: [OBSERVER, OPERATOR, APPROVER]}
+        '401': {$ref: '#/components/responses/Unauthenticated'}
+        '500': {$ref: '#/components/responses/InternalError'}
+  /api/v1/access/logout:
+    post:
+      tags: [access]
+      operationId: deleteHumanSession
+      summary: 使当前会话失效并删除Cookie
+      description: |
+        要求当前会话的CSRF。成功204无响应体；旧Cookie不能恢复身份。
+        已匿名但持有有效匿名会话CSRF时重复退出仍返回204，不代表获得身份。
+      security: [{humanSession: []}]
+      parameters:
+        - {$ref: '#/components/parameters/Csrf'}
+      responses:
+        '204': {description: 会话已失效，删除JSESSIONID}
+        '401': {$ref: '#/components/responses/Unauthenticated'}
+        '403': {$ref: '#/components/responses/Forbidden'}
+        '500': {$ref: '#/components/responses/InternalError'}
+components:
+  securitySchemes:
+    humanSession:
+      type: apiKey
+      in: cookie
+      name: JSESSIONID
+      description: 仅同源浏览器会话，不是来源凭据
+  parameters:
+    Csrf:
+      name: X-CSRF-TOKEN
+      in: header
+      required: true
+      description: 从当前会话GET csrf获取的token，缺失/错误/旧会话值均403
+      schema: {type: string, minLength: 1}
+  schemas:
+    Error:
+      type: object
+      additionalProperties: false
+      required: [code, message, traceId]
+      properties:
+        code:
+          type: string
+          enum: [UNAUTHENTICATED, FORBIDDEN, CSRF_REJECTED, INVALID_REQUEST, NOT_FOUND, INTERNAL_ERROR]
+          description: 稳定错误标识，调用方按此字段处理
+        message: {type: string, minLength: 1, description: 可展示的简短中文消息，不含异常原文}
+        traceId: {type: string, format: uuid, description: 服务端生成，与X-Trace-Id和审计一致}
+  responses:
+    Unauthenticated:
+      description: 401 身份/凭据无效或会话失效；不重定向，不暴露用户存在性
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/Error'}
+          example: {code: UNAUTHENTICATED, message: 身份或凭据无效, traceId: 00000000-0000-4000-8000-000000000001}
+    Forbidden:
+      description: 403 FORBIDDEN为越权，CSRF_REJECTED为会话写请求校验失败
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/Error'}
+    InternalError:
+      description: 500 INTERNAL_ERROR；无成功伪装、无内部栈或凭据
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/Error'}

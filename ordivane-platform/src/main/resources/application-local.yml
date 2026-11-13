@@ -1,0 +1,9 @@
+# 仅本机HTTP使用；非local环境默认要求HTTPS安全Cookie且没有账号初始化器。
+server:
+  servlet:
+    session:
+      cookie:
+        secure: false
+ordivane:
+  access:
+    initialize: ${ORDIVANE_ACCESS_INITIALIZE:false}

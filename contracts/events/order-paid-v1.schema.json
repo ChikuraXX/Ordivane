@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ordivane:events:order-paid:v1",
+  "title": "OrderPaid v1",
+  "description": "BE-010实现契约；恢复头不属于业务信封；未知版本进入死信并转人工。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["eventId", "source", "eventType", "schemaVersion", "occurredAt", "payload"],
+  "properties": {
+    "eventId": {"type": "string", "format": "uuid", "description": "逻辑事件UUID，支付时生成，重投保持不变"},
+    "source": {"const": "ordivane-demo"},
+    "eventType": {"const": "OrderPaid"},
+    "schemaVersion": {"const": 1},
+    "occurredAt": {"type": "string", "format": "date-time", "description": "带偏移的支付事实时间"},
+    "payload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["orderId", "entitlementType"],
+      "properties": {
+        "orderId": {"type": "string", "pattern": "^[A-Za-z0-9_-]{1,100}$"},
+        "entitlementType": {"const": "MEMBERSHIP"}
+      }
+    }
+  },
+  "examples": [{"eventId":"e46eca24-1909-4a0f-9a4d-d8c3ca37418c","source":"ordivane-demo","eventType":"OrderPaid","schemaVersion":1,"occurredAt":"2026-10-17T16:00:00+08:00","payload":{"orderId":"example-order-1","entitlementType":"MEMBERSHIP"}}]
+}

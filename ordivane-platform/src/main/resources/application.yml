@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: ordivane-platform
+  datasource:
+    url: jdbc:postgresql://${ORDIVANE_PG_HOST:127.0.0.1}:${ORDIVANE_PG_PORT:5432}/ordivane_platform
+    username: ordivane_platform
+    password: ${ORDIVANE_PLATFORM_DB_PASSWORD}
+  flyway:
+    locations: classpath:db/migration
+    fail-on-missing-locations: false
+  rabbitmq:
+    addresses: ${ORDIVANE_RABBITMQ_URI}
+    listener:
+      simple:
+        prefetch: 1
+server:
+  port: 8080
+  address: 127.0.0.1
+  servlet:
+    session:
+      timeout: 30m
+      tracking-modes: cookie
+      cookie:
+        http-only: true
+        same-site: strict
+        secure: ${ORDIVANE_ACCESS_COOKIE_SECURE:true}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+ordivane:
+  ingestion:
+    enabled: ${ORDIVANE_INGESTION_ENABLED:false}
+    queue: ${ORDIVANE_INGESTION_QUEUE:ordivane.ingestion.disabled}
+    source: ${ORDIVANE_INGESTION_SOURCE:}
+    handler: ${ORDIVANE_INGESTION_HANDLER:membership.activate}
+  membership:
+    base-url: ${ORDIVANE_DEMO_BASE_URL:http://127.0.0.1:8081}
+    token: ${ORDIVANE_DEMO_API_TOKEN:}
+
+  configuration:
+    root: ${ORDIVANE_CONFIGURATION_ROOT:.}
+
+  execution:
+    worker-enabled: ${ORDIVANE_EXECUTION_WORKER_ENABLED:false}
+    outbox-enabled: ${ORDIVANE_EXECUTION_OUTBOX_ENABLED:false}
+    delay-ms: ${ORDIVANE_EXECUTION_DELAY_MS:1000}
+    batch-size: ${ORDIVANE_EXECUTION_BATCH_SIZE:10}
+    lease-seconds: ${ORDIVANE_EXECUTION_LEASE_SECONDS:30}
+    confirm-timeout-ms: ${ORDIVANE_EXECUTION_CONFIRM_TIMEOUT_MS:5000}
+    local-mapping-enabled: ${ORDIVANE_EXECUTION_LOCAL_MAPPING_ENABLED:false}
+    local-prefix: ${ORDIVANE_EXECUTION_LOCAL_PREFIX:}
+    result-worker-enabled: ${ORDIVANE_EXECUTION_RESULT_WORKER_ENABLED:false}
+    result-delay-ms: ${ORDIVANE_EXECUTION_RESULT_DELAY_MS:1000}
+    result-interval-seconds: ${ORDIVANE_EXECUTION_RESULT_INTERVAL_SECONDS:10}
+    result-deadline-seconds: ${ORDIVANE_EXECUTION_RESULT_DEADLINE_SECONDS:300}
+    result-max-attempts: ${ORDIVANE_EXECUTION_RESULT_MAX_ATTEMPTS:6}

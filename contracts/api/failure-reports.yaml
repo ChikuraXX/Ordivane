@@ -1,0 +1,86 @@
+openapi: 3.1.0
+info:
+  title: 失败报告接入契约
+  version: 1.0.0
+  description: 发送方冻结契约；BE-030提供真实平台接收实现，待独立QA；规范比较和两类死信边界见incidents.md。
+paths:
+  /api/v1/failure-reports:
+    post:
+      operationId: acceptFailureReport
+      summary: 持久化接入一次失败观察
+      description: |
+        独立stateless来源Bearer链，不接受人类Cookie或演示API token，不要求CSRF。
+        服务端在持久化前调用AccessPolicy.requireSource(body.source)。来源相同、reportId相同、内容相同重传返回200；
+        首次持久化返回202，body为原reportId。source+reportId相同而内容不同返回409 REPORT_CONFLICT。
+        observationId标识独立观察，不按eventId去掉真实重复失败。eventId=null的格式失败仅保留观察，不可据此恢复业务。
+        202/200仅表示报告已持久化，不代表案件恢复或权益成功。错误不返回原文、凭据或栈。
+      security: [{sourceBearer: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '../events/failure-report-v1.schema.json'}
+      responses:
+        '202': {$ref: '#/components/responses/Accepted'}
+        '200': {$ref: '#/components/responses/Accepted'}
+        '400': {$ref: '#/components/responses/Invalid'}
+        '401': {$ref: '#/components/responses/Unauthenticated'}
+        '403': {$ref: '#/components/responses/Forbidden'}
+        '409': {$ref: '#/components/responses/Conflict'}
+        '413': {$ref: '#/components/responses/TooLarge'}
+        '429': {$ref: '#/components/responses/Unavailable'}
+        '500': {$ref: '#/components/responses/Unavailable'}
+        '503': {$ref: '#/components/responses/Unavailable'}
+components:
+  schemas:
+    Error:
+      type: object
+      additionalProperties: false
+      required: [code, message, traceId]
+      properties:
+        code: {type: string, enum: [INVALID_REQUEST, UNAUTHENTICATED, FORBIDDEN, REPORT_CONFLICT, INTERNAL_ERROR, UNAVAILABLE]}
+        message: {type: string, minLength: 1, maxLength: 256, description: 固定安全摘要，不回显输入或异常}
+        traceId: {type: string, format: uuid, description: BE-020服务端生成关联ID}
+  securitySchemes:
+    sourceBearer: {type: http, scheme: bearer, description: BE-020 access_source中的高熵来源凭据，与报告source一致}
+  responses:
+    Invalid:
+      description: INVALID_REQUEST；格式或Schema无效，不自动重试
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/Error'}
+    Unauthenticated:
+      description: UNAUTHENTICATED；来源凭据无效，不自动重试
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/Error'}
+    Forbidden:
+      description: FORBIDDEN；来源声明不匹配，不自动重试
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/Error'}
+    Conflict:
+      description: REPORT_CONFLICT；同一来源/reportId不同内容，不自动重试
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/Error'}
+    TooLarge:
+      description: INVALID_REQUEST；请求超过32768字节，不自动重试
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/Error'}
+    Unavailable:
+      description: INTERNAL_ERROR或UNAVAILABLE；持久化未确认，有界重试
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/Error'}
+    Accepted:
+      description: 报告已持久化；响应reportId必须与请求匹配
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [reportId]
+            properties:
+              reportId: {type: string, format: uuid}

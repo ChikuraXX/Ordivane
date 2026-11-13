@@ -1,0 +1,13 @@
+COMMENT ON COLUMN execution_result_observation.id IS '不可变观测UUID，案件解决引用此依据';
+COMMENT ON COLUMN execution_result_observation.execution_id IS '所属执行，不能以他人执行的查询释放资格';
+COMMENT ON COLUMN execution_result_observation.fencing_token IS '此次结果领取令牌，同执行同令牌只记录一次';
+COMMENT ON COLUMN execution_result_observation.verified IS '该次观测满足业务条件；发送租约仍活动时尚不代表已释放资格';
+COMMENT ON COLUMN execution_result_observation.reason IS '明确核验原因码，依赖失败与有限历史不足分开';
+COMMENT ON COLUMN execution_result_observation.content IS '三份原始查询响应、范围与各自时点；失败保留部分观测';
+COMMENT ON COLUMN execution_result_observation.content_sha256 IS '原始观测规范JSON的SHA256';
+COMMENT ON COLUMN execution_result_observation.observed_at IS '观测提交的数据库UTC时间，远端各时点在content内';
+COMMENT ON COLUMN execution_timeline.id IS '追加时间线UUID';
+COMMENT ON COLUMN execution_timeline.execution_id IS '所属执行，历史不随资格释放删除';
+COMMENT ON COLUMN execution_timeline.kind IS '创建、发送、取消、核验或资格释放类别';
+COMMENT ON COLUMN execution_timeline.document IS '该次变更的非秘密依据及观测引用';
+COMMENT ON COLUMN execution_timeline.recorded_at IS '数据库UTC记录时间';

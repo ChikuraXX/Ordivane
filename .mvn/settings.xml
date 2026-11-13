@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+  <!-- 仅在显式激活代理配置时使用当前进程提供的代理参数。 -->
+  <proxies>
+    <proxy>
+      <id>local-development</id><active>${env.ORDIVANE_PROXY_ENABLED}</active>
+      <protocol>http</protocol><host>${env.ORDIVANE_PROXY_HOST}</host><port>${env.ORDIVANE_PROXY_PORT}</port>
+      <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+    </proxy>
+  </proxies>
+</settings>

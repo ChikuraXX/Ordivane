@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>4.1.1</version>
+    <relativePath/>
+  </parent>
+  <groupId>io.ordivane</groupId>
+  <artifactId>ordivane</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Ordivane</name>
+  <description>平台与演示应用的工程聚合；不包含业务实现。</description>
+  <modules>
+    <module>ordivane-platform</module>
+    <module>ordivane-demo</module>
+  </modules>
+  <properties>
+    <java.version>25</java.version>
+  </properties>
+</project>

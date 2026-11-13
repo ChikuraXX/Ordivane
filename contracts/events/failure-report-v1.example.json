@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "reportId": "00000000-0000-4000-8000-000000000011",
+  "observationId": "00000000-0000-4000-8000-000000000012",
+  "source": "ordivane-demo",
+  "eventId": null,
+  "handlerId": "membership.activate",
+  "executionId": null,
+  "origin": "ORIGINAL",
+  "observedAt": "2026-10-18T04:00:00Z",
+  "errorCode": "INVALID_MESSAGE",
+  "errorSummary": "消息格式或恢复头无效",
+  "originalEvent": null,
+  "bodySha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "deadLetter": {
+    "queue": "ordivane.demo.membership.failed",
+    "reportId": "00000000-0000-4000-8000-000000000011",
+    "observationId": "00000000-0000-4000-8000-000000000012"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ordivane.local/contracts/events/failure-report-v1.schema.json",
+  "title": "FailureReport v1",
+  "description": "冻结的发送方契约；接收平台业务实现由BE-030交付。所有字段必填，nullable仅限明确声明的字段。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "reportId", "observationId", "source", "eventId", "handlerId", "executionId", "origin", "observedAt", "errorCode", "errorSummary", "originalEvent", "bodySha256", "deadLetter"],
+  "properties": {
+    "schemaVersion": {"const": 1, "type": "integer"},
+    "reportId": {"type": "string", "format": "uuid", "description": "同一持久化报告重发保持不变；接收端以source+reportId去重"},
+    "observationId": {"type": "string", "format": "uuid", "description": "本次消费失败观察标识；不同观察不同，不是eventId/业务幂等键"},
+    "source": {"type": "string", "pattern": "^[A-Za-z0-9_.-]{1,128}$", "description": "经过来源Bearer鉴权的业务来源ID，服务端须requireSource(source)"},
+    "eventId": {"type": ["string", "null"], "format": "uuid", "description": "严格信封可读时的逻辑事件ID；不可解析时为null，不伪造事件"},
+    "handlerId": {"const": "membership.activate", "type": "string"},
+    "executionId": {"type": ["string", "null"], "format": "uuid", "description": "有效恢复头中的执行ID，原始为null"},
+    "origin": {"type": "string", "enum": ["ORIGINAL", "RECOVERY"]},
+    "observedAt": {"type": "string", "format": "date-time", "description": "UTC带偏移时间；报告持久化时固定"},
+    "errorCode": {"type": "string", "enum": ["INVALID_MESSAGE", "PROCESSING_FAILED", "DOWNSTREAM_UNAVAILABLE", "COMMITTED_RESPONSE_TIMEOUT"]},
+    "errorSummary": {"type": "string", "enum": ["消息格式或恢复头无效", "会员处理未完成", "模拟下游不可用", "业务已提交但响应超时，需核验业务结果"]},
+    "originalEvent": {"oneOf": [{"$ref": "order-paid-v1.schema.json"}, {"type": "null"}], "description": "仅严格解析且通过事件校验的白名单OrderPaid信封；非法Schema为null，不保存任意原文或头"},
+    "bodySha256": {"type": "string", "pattern": "^[a-f0-9]{64}$", "description": "原始消息正文摘要，非法正文只保留摘要"},
+    "deadLetter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["queue", "reportId", "observationId"],
+      "properties": {
+        "queue": {"type": "string", "minLength": 1, "maxLength": 240},
+        "reportId": {"type": "string", "format": "uuid"},
+        "observationId": {"type": "string", "format": "uuid"}
+      },
+      "description": "死信正文为本报告，ID与外层相同；异步投递与HTTP接入无先后保证，broker确认不等于业务成功"
+    }
+  }
+}

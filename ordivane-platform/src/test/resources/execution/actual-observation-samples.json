@@ -1,0 +1,1871 @@
+[
+  {
+    "event": {
+      "eventId": "6fafb203-f8ad-4129-92ba-55e3f9de81e8",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:12:24.6085273+08:00",
+      "payload": {
+        "orderId": "be061_be06103f5685cc2_lost",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "b66fa54c-8c3b-4ee4-a077-d8e559262570",
+    "observation": {
+      "startedAt": "2026-10-22T08:13:14.594861300Z",
+      "eventId": "6fafb203-f8ad-4129-92ba-55e3f9de81e8",
+      "executionId": "b66fa54c-8c3b-4ee4-a077-d8e559262570",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_lost",
+          "startedAt": "2026-10-22T08:13:14.594861300Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:14.707979500Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_lost/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:13:14.707979500Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:14.894094200Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=6fafb203-f8ad-4129-92ba-55e3f9de81e8&executionId=b66fa54c-8c3b-4ee4-a077-d8e559262570",
+          "startedAt": "2026-10-22T08:13:14.894094200Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:14.986510400Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be06103f5685cc2_lost",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:12:24.441Z",
+        "updated_at": "2026-10-22T08:12:24.608Z"
+      },
+      "entitlement": {
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be06103f5685cc2_lost",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "6fafb203-f8ad-4129-92ba-55e3f9de81e8",
+            "granted_at": "2026-10-22T08:13:05.368Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP",
+        "orderId": "be061_be06103f5685cc2_lost"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "dc5089f3-8750-4870-b8e6-e47c80777156",
+          "event_id": "6fafb203-f8ad-4129-92ba-55e3f9de81e8",
+          "execution_id": "b66fa54c-8c3b-4ee4-a077-d8e559262570",
+          "order_id": "be061_be06103f5685cc2_lost",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "ALREADY_GRANTED",
+          "processed_at": "2026-10-22T08:13:06.652Z"
+        },
+        {
+          "attempt_id": "d111d783-b426-4429-9cc9-fc5859a97fa2",
+          "event_id": "6fafb203-f8ad-4129-92ba-55e3f9de81e8",
+          "execution_id": "b66fa54c-8c3b-4ee4-a077-d8e559262570",
+          "order_id": "be061_be06103f5685cc2_lost",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:13:05.368Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:13:14.986510400Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be06103f5685cc2"
+  },
+  {
+    "event": {
+      "eventId": "d6295fdb-5223-44bc-b86f-094e61b4fafd",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:12:26.2061495+08:00",
+      "payload": {
+        "orderId": "be061_be06103f5685cc2_refund",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "797cef83-2aa7-45cd-a0bb-d46b1ea40bb1",
+    "observation": {
+      "startedAt": "2026-10-22T08:13:15.017911100Z",
+      "eventId": "d6295fdb-5223-44bc-b86f-094e61b4fafd",
+      "executionId": "797cef83-2aa7-45cd-a0bb-d46b1ea40bb1",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_refund",
+          "startedAt": "2026-10-22T08:13:15.017911100Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.110151700Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_refund/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:13:15.110151700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.203534400Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=d6295fdb-5223-44bc-b86f-094e61b4fafd&executionId=797cef83-2aa7-45cd-a0bb-d46b1ea40bb1",
+          "startedAt": "2026-10-22T08:13:15.203534400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.278106200Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be06103f5685cc2_refund",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "REFUNDED",
+        "version": 2,
+        "created_at": "2026-10-22T08:12:26.036Z",
+        "updated_at": "2026-10-22T08:12:49.952Z"
+      },
+      "entitlement": {
+        "active": false,
+        "orderStatus": "REFUNDED",
+        "granted": false,
+        "entitlements": [],
+        "entitlementType": "MEMBERSHIP",
+        "orderId": "be061_be06103f5685cc2_refund"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "346ef243-2e95-4de6-8e60-19abd88d85e7",
+          "event_id": "d6295fdb-5223-44bc-b86f-094e61b4fafd",
+          "execution_id": "797cef83-2aa7-45cd-a0bb-d46b1ea40bb1",
+          "order_id": "be061_be06103f5685cc2_refund",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "REFUND_REJECTED",
+          "processed_at": "2026-10-22T08:13:05.395Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:13:15.278106200Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "CURRENT_BUSINESS_NOT_CONFIRMED",
+    "run": "run-be06103f5685cc2"
+  },
+  {
+    "event": {
+      "eventId": "2b633746-81ed-469e-899f-c10522107329",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:12:27.569015+08:00",
+      "payload": {
+        "orderId": "be061_be06103f5685cc2_unknown",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "536b30ac-70c3-4328-b4ba-4ad2cdd01b94",
+    "observation": {
+      "startedAt": "2026-10-22T08:13:15.288872400Z",
+      "eventId": "2b633746-81ed-469e-899f-c10522107329",
+      "executionId": "536b30ac-70c3-4328-b4ba-4ad2cdd01b94",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_unknown",
+          "startedAt": "2026-10-22T08:13:15.288872400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.383513Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_unknown/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:13:15.383513Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.475082Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=2b633746-81ed-469e-899f-c10522107329&executionId=536b30ac-70c3-4328-b4ba-4ad2cdd01b94",
+          "startedAt": "2026-10-22T08:13:15.475082Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.566802800Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be06103f5685cc2_unknown",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:12:27.410Z",
+        "updated_at": "2026-10-22T08:12:27.569Z"
+      },
+      "entitlement": {
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be06103f5685cc2_unknown",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "2b633746-81ed-469e-899f-c10522107329",
+            "granted_at": "2026-10-22T08:13:05.403Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP",
+        "orderId": "be061_be06103f5685cc2_unknown"
+      },
+      "processingRecords": [],
+      "finishedAt": "2026-10-22T08:13:15.566802800Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "INSUFFICIENT_FINITE_HISTORY",
+    "run": "run-be06103f5685cc2"
+  },
+  {
+    "event": {
+      "eventId": "5182458e-b8e6-4cf8-a6e0-a08940535ab4",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:12:28.9771449+08:00",
+      "payload": {
+        "orderId": "be061_be06103f5685cc2_verify",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": null,
+    "observation": {
+      "startedAt": "2026-10-22T08:13:15.575994500Z",
+      "eventId": "5182458e-b8e6-4cf8-a6e0-a08940535ab4",
+      "executionId": null,
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_verify",
+          "startedAt": "2026-10-22T08:13:15.575994500Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.673342500Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_verify/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:13:15.673919700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.767362400Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=5182458e-b8e6-4cf8-a6e0-a08940535ab4",
+          "startedAt": "2026-10-22T08:13:15.767362400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.843470500Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be06103f5685cc2_verify",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:12:28.822Z",
+        "updated_at": "2026-10-22T08:12:28.977Z"
+      },
+      "entitlement": {
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be06103f5685cc2_verify",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "5182458e-b8e6-4cf8-a6e0-a08940535ab4",
+            "granted_at": "2026-10-22T08:13:05.368Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP",
+        "orderId": "be061_be06103f5685cc2_verify"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "25aa35ec-f1f6-4e11-a320-650173243315",
+          "event_id": "5182458e-b8e6-4cf8-a6e0-a08940535ab4",
+          "execution_id": null,
+          "order_id": "be061_be06103f5685cc2_verify",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "ORIGINAL",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:13:05.368Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:13:15.843470500Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be06103f5685cc2"
+  },
+  {
+    "event": {
+      "eventId": "52c45b3a-b207-406f-8fbb-6a835200b889",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:12:30.3261389+08:00",
+      "payload": {
+        "orderId": "be061_be06103f5685cc2_wait",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": null,
+    "observation": {
+      "startedAt": "2026-10-22T08:13:15.853199900Z",
+      "eventId": "52c45b3a-b207-406f-8fbb-6a835200b889",
+      "executionId": null,
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_wait",
+          "startedAt": "2026-10-22T08:13:15.853199900Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:15.935340400Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be06103f5685cc2_wait/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:13:15.935340400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:16.026847Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=52c45b3a-b207-406f-8fbb-6a835200b889",
+          "startedAt": "2026-10-22T08:13:16.026847Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:13:16.104333900Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be06103f5685cc2_wait",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:12:30.174Z",
+        "updated_at": "2026-10-22T08:12:30.325Z"
+      },
+      "entitlement": {
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be06103f5685cc2_wait",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "52c45b3a-b207-406f-8fbb-6a835200b889",
+            "granted_at": "2026-10-22T08:13:05.395Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP",
+        "orderId": "be061_be06103f5685cc2_wait"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "4a4585a4-663c-4569-b776-3142a9ab6802",
+          "event_id": "52c45b3a-b207-406f-8fbb-6a835200b889",
+          "execution_id": null,
+          "order_id": "be061_be06103f5685cc2_wait",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "ORIGINAL",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:13:05.395Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:13:16.104333900Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be06103f5685cc2"
+  },
+  {
+    "event": {
+      "eventId": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:15.5264809+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_lost",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "096e101f-9739-4565-b84a-e5c00b9ed199",
+    "observation": {
+      "startedAt": "2026-10-22T08:15:06.113465400Z",
+      "eventId": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+      "executionId": "096e101f-9739-4565-b84a-e5c00b9ed199",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": false,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_lost",
+          "startedAt": "2026-10-22T08:15:06.113465400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:06.256270500Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_lost/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:06.256270500Z",
+          "outcome": "UNAVAILABLE",
+          "finishedAt": "2026-10-22T08:15:08.257431500Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=c73de416-1ba6-4438-8f64-b889152d8cfa&executionId=096e101f-9739-4565-b84a-e5c00b9ed199",
+          "startedAt": "2026-10-22T08:15:08.257431500Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:08.332873700Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_lost",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:14:15.354Z",
+        "updated_at": "2026-10-22T08:14:15.526Z"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "ab0fa66e-b3cd-4e0c-bb99-d4bcc2cdfcae",
+          "event_id": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+          "execution_id": "096e101f-9739-4565-b84a-e5c00b9ed199",
+          "order_id": "be061_be0613b51ef51a9_lost",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "ALREADY_GRANTED",
+          "processed_at": "2026-10-22T08:14:57.147Z"
+        },
+        {
+          "attempt_id": "6d461cc3-dc79-4661-8508-472b217e32ed",
+          "event_id": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+          "execution_id": "096e101f-9739-4565-b84a-e5c00b9ed199",
+          "order_id": "be061_be0613b51ef51a9_lost",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:14:55.810Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:15:08.332873700Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "DEPENDENCY_UNAVAILABLE",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:15.5264809+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_lost",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "096e101f-9739-4565-b84a-e5c00b9ed199",
+    "observation": {
+      "startedAt": "2026-10-22T08:15:09.489984200Z",
+      "eventId": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+      "executionId": "096e101f-9739-4565-b84a-e5c00b9ed199",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_lost",
+          "startedAt": "2026-10-22T08:15:09.489984200Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.562809400Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_lost/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:09.562809400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.659196300Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=c73de416-1ba6-4438-8f64-b889152d8cfa&executionId=096e101f-9739-4565-b84a-e5c00b9ed199",
+          "startedAt": "2026-10-22T08:15:09.659196300Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.751733Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_lost",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:14:15.354Z",
+        "updated_at": "2026-10-22T08:14:15.526Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_lost",
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be0613b51ef51a9_lost",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+            "granted_at": "2026-10-22T08:14:55.810Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "ab0fa66e-b3cd-4e0c-bb99-d4bcc2cdfcae",
+          "event_id": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+          "execution_id": "096e101f-9739-4565-b84a-e5c00b9ed199",
+          "order_id": "be061_be0613b51ef51a9_lost",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "ALREADY_GRANTED",
+          "processed_at": "2026-10-22T08:14:57.147Z"
+        },
+        {
+          "attempt_id": "6d461cc3-dc79-4661-8508-472b217e32ed",
+          "event_id": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+          "execution_id": "096e101f-9739-4565-b84a-e5c00b9ed199",
+          "order_id": "be061_be0613b51ef51a9_lost",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:14:55.810Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:15:09.751733Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "99dc3bcb-75ce-44dd-a739-81f8d3e89380",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:19.6231289+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_verify",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": null,
+    "observation": {
+      "startedAt": "2026-10-22T08:15:08.902162400Z",
+      "eventId": "99dc3bcb-75ce-44dd-a739-81f8d3e89380",
+      "executionId": null,
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_verify",
+          "startedAt": "2026-10-22T08:15:08.902162400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:08.985681300Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_verify/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:08.985681300Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.078847700Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=99dc3bcb-75ce-44dd-a739-81f8d3e89380",
+          "startedAt": "2026-10-22T08:15:09.078847700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.169124900Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_verify",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:14:19.485Z",
+        "updated_at": "2026-10-22T08:14:19.622Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_verify",
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be0613b51ef51a9_verify",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "99dc3bcb-75ce-44dd-a739-81f8d3e89380",
+            "granted_at": "2026-10-22T08:14:55.810Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "aeacba5c-064a-4ab8-a492-e89062d3b813",
+          "event_id": "99dc3bcb-75ce-44dd-a739-81f8d3e89380",
+          "execution_id": null,
+          "order_id": "be061_be0613b51ef51a9_verify",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "ORIGINAL",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:14:55.810Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:15:09.169630400Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "9baf8668-1483-438c-986e-55969b90d720",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:20.9522941+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_wait",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": null,
+    "observation": {
+      "startedAt": "2026-10-22T08:15:09.185829400Z",
+      "eventId": "9baf8668-1483-438c-986e-55969b90d720",
+      "executionId": null,
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_wait",
+          "startedAt": "2026-10-22T08:15:09.185829400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.290843700Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_wait/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:09.290843700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.370091700Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=9baf8668-1483-438c-986e-55969b90d720",
+          "startedAt": "2026-10-22T08:15:09.370091700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.475361800Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_wait",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:14:20.815Z",
+        "updated_at": "2026-10-22T08:14:20.951Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_wait",
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be0613b51ef51a9_wait",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "9baf8668-1483-438c-986e-55969b90d720",
+            "granted_at": "2026-10-22T08:14:55.835Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "436d7e67-07a0-404e-a92f-a29fbc5f1b76",
+          "event_id": "9baf8668-1483-438c-986e-55969b90d720",
+          "execution_id": null,
+          "order_id": "be061_be0613b51ef51a9_wait",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "ORIGINAL",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:14:55.835Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:15:09.475588500Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:18.2721107+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_unknown",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "d030fb8d-87e7-46ed-a453-b127a7bb8f4f",
+    "observation": {
+      "startedAt": "2026-10-22T08:15:08.607679500Z",
+      "eventId": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+      "executionId": "d030fb8d-87e7-46ed-a453-b127a7bb8f4f",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_unknown",
+          "startedAt": "2026-10-22T08:15:08.607679500Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:08.709953600Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_unknown/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:08.709953600Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:08.802312400Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=1422d317-e314-46b3-a118-4eb8c87b9c06&executionId=d030fb8d-87e7-46ed-a453-b127a7bb8f4f",
+          "startedAt": "2026-10-22T08:15:08.802312400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:08.891644300Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_unknown",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:14:18.122Z",
+        "updated_at": "2026-10-22T08:14:18.271Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_unknown",
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be0613b51ef51a9_unknown",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+            "granted_at": "2026-10-22T08:14:55.842Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [],
+      "finishedAt": "2026-10-22T08:15:08.891644300Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "INSUFFICIENT_FINITE_HISTORY",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:18.2721107+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_unknown",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "d030fb8d-87e7-46ed-a453-b127a7bb8f4f",
+    "observation": {
+      "startedAt": "2026-10-22T08:15:10.038984700Z",
+      "eventId": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+      "executionId": "d030fb8d-87e7-46ed-a453-b127a7bb8f4f",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_unknown",
+          "startedAt": "2026-10-22T08:15:10.038984700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:10.134010Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_unknown/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:10.134010Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:10.226093500Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=1422d317-e314-46b3-a118-4eb8c87b9c06&executionId=d030fb8d-87e7-46ed-a453-b127a7bb8f4f",
+          "startedAt": "2026-10-22T08:15:10.226093500Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:10.301568200Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_unknown",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:14:18.122Z",
+        "updated_at": "2026-10-22T08:14:18.271Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_unknown",
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be0613b51ef51a9_unknown",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+            "granted_at": "2026-10-22T08:14:55.842Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [],
+      "finishedAt": "2026-10-22T08:15:10.301568200Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "INSUFFICIENT_FINITE_HISTORY",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:18.2721107+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_unknown",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "d030fb8d-87e7-46ed-a453-b127a7bb8f4f",
+    "observation": {
+      "startedAt": "2026-10-22T08:15:18.457680800Z",
+      "eventId": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+      "executionId": "d030fb8d-87e7-46ed-a453-b127a7bb8f4f",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_unknown",
+          "startedAt": "2026-10-22T08:15:18.457680800Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:18.533463700Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_unknown/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:18.533463700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:18.613782Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=1422d317-e314-46b3-a118-4eb8c87b9c06&executionId=d030fb8d-87e7-46ed-a453-b127a7bb8f4f",
+          "startedAt": "2026-10-22T08:15:18.613782Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:18.705544500Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_unknown",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:14:18.122Z",
+        "updated_at": "2026-10-22T08:14:18.271Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_unknown",
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be0613b51ef51a9_unknown",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+            "granted_at": "2026-10-22T08:14:55.842Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [],
+      "finishedAt": "2026-10-22T08:15:18.705544500Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "INSUFFICIENT_FINITE_HISTORY",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:16.9540124+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_refund",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "d0208106-d3fb-4bf2-afda-36dadd6795db",
+    "observation": {
+      "startedAt": "2026-10-22T08:15:08.364319300Z",
+      "eventId": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+      "executionId": "d0208106-d3fb-4bf2-afda-36dadd6795db",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_refund",
+          "startedAt": "2026-10-22T08:15:08.364319300Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:08.435371200Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_refund/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:08.435371200Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:08.525867600Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=d8e4ded0-c7af-4a9c-beac-b8ac1898ab46&executionId=d0208106-d3fb-4bf2-afda-36dadd6795db",
+          "startedAt": "2026-10-22T08:15:08.525867600Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:08.597438800Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_refund",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "REFUNDED",
+        "version": 2,
+        "created_at": "2026-10-22T08:14:16.803Z",
+        "updated_at": "2026-10-22T08:14:40.284Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_refund",
+        "active": false,
+        "orderStatus": "REFUNDED",
+        "granted": false,
+        "entitlements": [],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "d9d305cb-b7e8-43e9-9164-197f20c34c7c",
+          "event_id": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+          "execution_id": "d0208106-d3fb-4bf2-afda-36dadd6795db",
+          "order_id": "be061_be0613b51ef51a9_refund",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "REFUND_REJECTED",
+          "processed_at": "2026-10-22T08:14:55.835Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:15:08.597438800Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "CURRENT_BUSINESS_NOT_CONFIRMED",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:16.9540124+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_refund",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "d0208106-d3fb-4bf2-afda-36dadd6795db",
+    "observation": {
+      "startedAt": "2026-10-22T08:15:09.766915700Z",
+      "eventId": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+      "executionId": "d0208106-d3fb-4bf2-afda-36dadd6795db",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_refund",
+          "startedAt": "2026-10-22T08:15:09.766915700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.858317100Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_refund/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:09.858317100Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:09.950929900Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=d8e4ded0-c7af-4a9c-beac-b8ac1898ab46&executionId=d0208106-d3fb-4bf2-afda-36dadd6795db",
+          "startedAt": "2026-10-22T08:15:09.950929900Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:10.030902300Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_refund",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "REFUNDED",
+        "version": 2,
+        "created_at": "2026-10-22T08:14:16.803Z",
+        "updated_at": "2026-10-22T08:14:40.284Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_refund",
+        "active": false,
+        "orderStatus": "REFUNDED",
+        "granted": false,
+        "entitlements": [],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "d9d305cb-b7e8-43e9-9164-197f20c34c7c",
+          "event_id": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+          "execution_id": "d0208106-d3fb-4bf2-afda-36dadd6795db",
+          "order_id": "be061_be0613b51ef51a9_refund",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "REFUND_REJECTED",
+          "processed_at": "2026-10-22T08:14:55.835Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:15:10.030902300Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "CURRENT_BUSINESS_NOT_CONFIRMED",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:16.9540124+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_refund",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "d0208106-d3fb-4bf2-afda-36dadd6795db",
+    "observation": {
+      "startedAt": "2026-10-22T08:15:18.101146Z",
+      "eventId": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+      "executionId": "d0208106-d3fb-4bf2-afda-36dadd6795db",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_refund",
+          "startedAt": "2026-10-22T08:15:18.102141200Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:18.244445800Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_refund/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:18.244445800Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:18.339804100Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=d8e4ded0-c7af-4a9c-beac-b8ac1898ab46&executionId=d0208106-d3fb-4bf2-afda-36dadd6795db",
+          "startedAt": "2026-10-22T08:15:18.339804100Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:18.431454900Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_refund",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "REFUNDED",
+        "version": 2,
+        "created_at": "2026-10-22T08:14:16.803Z",
+        "updated_at": "2026-10-22T08:14:40.284Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_refund",
+        "active": false,
+        "orderStatus": "REFUNDED",
+        "granted": false,
+        "entitlements": [],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "d9d305cb-b7e8-43e9-9164-197f20c34c7c",
+          "event_id": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+          "execution_id": "d0208106-d3fb-4bf2-afda-36dadd6795db",
+          "order_id": "be061_be0613b51ef51a9_refund",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "REFUND_REJECTED",
+          "processed_at": "2026-10-22T08:14:55.835Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:15:18.431454900Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "CURRENT_BUSINESS_NOT_CONFIRMED",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:14:18.2721107+08:00",
+      "payload": {
+        "orderId": "be061_be0613b51ef51a9_unknown",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": null,
+    "observation": {
+      "startedAt": "2026-10-22T08:15:34.563429300Z",
+      "eventId": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+      "executionId": null,
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_unknown",
+          "startedAt": "2026-10-22T08:15:34.563429300Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:34.667402900Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0613b51ef51a9_unknown/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:15:34.667402900Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:34.760774400Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=1422d317-e314-46b3-a118-4eb8c87b9c06",
+          "startedAt": "2026-10-22T08:15:34.760774400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:15:34.854313100Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0613b51ef51a9_unknown",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:14:18.122Z",
+        "updated_at": "2026-10-22T08:14:18.271Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0613b51ef51a9_unknown",
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be0613b51ef51a9_unknown",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+            "granted_at": "2026-10-22T08:14:55.842Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "55b198ab-e769-4532-a76a-85d96257b331",
+          "event_id": "1422d317-e314-46b3-a118-4eb8c87b9c06",
+          "execution_id": null,
+          "order_id": "be061_be0613b51ef51a9_unknown",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "ORIGINAL",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:14:55.842Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:15:34.854313100Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be0613b51ef51a9"
+  },
+  {
+    "event": {
+      "eventId": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:19:29.8585176+08:00",
+      "payload": {
+        "orderId": "be061_be0614dfefc3665_waitexpired",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": null,
+    "observation": {
+      "startedAt": "2026-10-22T08:20:36.777740Z",
+      "eventId": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+      "executionId": null,
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_waitexpired",
+          "startedAt": "2026-10-22T08:20:36.778745Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:20:36.917553100Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_waitexpired/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:20:36.917553100Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:20:37.020456600Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=3a38d889-b522-4d3b-95fe-d928c1022d94",
+          "startedAt": "2026-10-22T08:20:37.020456600Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:20:37.118442200Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0614dfefc3665_waitexpired",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:19:29.691Z",
+        "updated_at": "2026-10-22T08:19:29.858Z"
+      },
+      "entitlement": {
+        "orderId": "be061_be0614dfefc3665_waitexpired",
+        "entitlementType": "MEMBERSHIP",
+        "entitlements": [
+          {
+            "order_id": "be061_be0614dfefc3665_waitexpired",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+            "granted_at": "2026-10-22T08:19:37.027Z"
+          }
+        ],
+        "granted": true,
+        "orderStatus": "PAID",
+        "active": true
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "53403b99-8892-4b3e-b0de-72b712012e16",
+          "event_id": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+          "execution_id": null,
+          "order_id": "be061_be0614dfefc3665_waitexpired",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "ORIGINAL",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:19:37.027Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:20:37.118442200Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be0614dfefc3665"
+  },
+  {
+    "event": {
+      "eventId": "bad5f6e3-5fff-403e-afc8-606df5e42212",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:17:56.7224089+08:00",
+      "payload": {
+        "orderId": "be061_be0614dfefc3665_deadline",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "ad6e1126-d573-4d01-9dda-ecd63f7b4f78",
+    "observation": {
+      "startedAt": "2026-10-22T08:18:13.155941200Z",
+      "eventId": "bad5f6e3-5fff-403e-afc8-606df5e42212",
+      "executionId": "ad6e1126-d573-4d01-9dda-ecd63f7b4f78",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_deadline",
+          "startedAt": "2026-10-22T08:18:13.155941200Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:18:13.277913900Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_deadline/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:18:13.277913900Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:18:13.369523900Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=bad5f6e3-5fff-403e-afc8-606df5e42212&executionId=ad6e1126-d573-4d01-9dda-ecd63f7b4f78",
+          "startedAt": "2026-10-22T08:18:13.369523900Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:18:13.461601600Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0614dfefc3665_deadline",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:17:56.568Z",
+        "updated_at": "2026-10-22T08:17:56.722Z"
+      },
+      "entitlement": {
+        "active": false,
+        "orderId": "be061_be0614dfefc3665_deadline",
+        "entitlementType": "MEMBERSHIP",
+        "entitlements": [],
+        "granted": false,
+        "orderStatus": "PAID"
+      },
+      "processingRecords": [],
+      "finishedAt": "2026-10-22T08:18:13.461850200Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "CURRENT_BUSINESS_NOT_CONFIRMED",
+    "run": "run-be0614dfefc3665"
+  },
+  {
+    "event": {
+      "eventId": "94d822aa-f3fe-458f-982d-6ed00eea55a0",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:18:14.544704+08:00",
+      "payload": {
+        "orderId": "be061_be0614dfefc3665_resultfence",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": null,
+    "observation": {
+      "startedAt": "2026-10-22T08:18:44.939235500Z",
+      "eventId": "94d822aa-f3fe-458f-982d-6ed00eea55a0",
+      "executionId": null,
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_resultfence",
+          "startedAt": "2026-10-22T08:18:44.939743900Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:18:45.062542500Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_resultfence/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:18:45.062542500Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:18:45.136174100Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=94d822aa-f3fe-458f-982d-6ed00eea55a0",
+          "startedAt": "2026-10-22T08:18:45.136174100Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:18:45.208674Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0614dfefc3665_resultfence",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:18:14.382Z",
+        "updated_at": "2026-10-22T08:18:14.544Z"
+      },
+      "entitlement": {
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be0614dfefc3665_resultfence",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "94d822aa-f3fe-458f-982d-6ed00eea55a0",
+            "granted_at": "2026-10-22T08:18:21.237Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP",
+        "orderId": "be061_be0614dfefc3665_resultfence"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "e2c03831-46b7-473f-9265-cb38ac2945b9",
+          "event_id": "94d822aa-f3fe-458f-982d-6ed00eea55a0",
+          "execution_id": null,
+          "order_id": "be061_be0614dfefc3665_resultfence",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "ORIGINAL",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:18:21.237Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:18:45.208748200Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be0614dfefc3665"
+  },
+  {
+    "event": {
+      "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:18:51.5657715+08:00",
+      "payload": {
+        "orderId": "be061_be0614dfefc3665_ownership",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+    "observation": {
+      "startedAt": "2026-10-22T08:19:14.508959700Z",
+      "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+      "executionId": "3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_ownership",
+          "startedAt": "2026-10-22T08:19:14.508959700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:19:14.643539300Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_ownership/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:19:14.643539300Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:19:14.739957800Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=286de5a7-5ee1-47f3-ab21-0035ad3e6159&executionId=3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+          "startedAt": "2026-10-22T08:19:14.739957800Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:19:14.830717300Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0614dfefc3665_ownership",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:18:51.388Z",
+        "updated_at": "2026-10-22T08:18:51.565Z"
+      },
+      "entitlement": {
+        "active": true,
+        "orderId": "be061_be0614dfefc3665_ownership",
+        "entitlementType": "MEMBERSHIP",
+        "entitlements": [
+          {
+            "order_id": "be061_be0614dfefc3665_ownership",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+            "granted_at": "2026-10-22T08:19:06.581Z"
+          }
+        ],
+        "granted": true,
+        "orderStatus": "PAID"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "4f5d520a-92d9-4955-84f8-4eb7aa1e5327",
+          "event_id": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+          "execution_id": "52aeec52-0442-4a58-b08b-bf34c6993fe5",
+          "order_id": "be061_be0614dfefc3665_ownership",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:19:06.581Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:19:14.830717300Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "PROCESSING_OWNERSHIP_MISMATCH",
+    "run": "run-be0614dfefc3665"
+  },
+  {
+    "event": {
+      "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:18:51.5657715+08:00",
+      "payload": {
+        "orderId": "be061_be0614dfefc3665_ownership",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": null,
+    "observation": {
+      "startedAt": "2026-10-22T08:19:23.218227100Z",
+      "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+      "executionId": null,
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_ownership",
+          "startedAt": "2026-10-22T08:19:23.218227100Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:19:23.353559400Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be0614dfefc3665_ownership/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:19:23.353559400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:19:23.448019500Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+          "startedAt": "2026-10-22T08:19:23.448019500Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:19:23.520463500Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be0614dfefc3665_ownership",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:18:51.388Z",
+        "updated_at": "2026-10-22T08:18:51.565Z"
+      },
+      "entitlement": {
+        "active": true,
+        "orderId": "be061_be0614dfefc3665_ownership",
+        "entitlementType": "MEMBERSHIP",
+        "entitlements": [
+          {
+            "order_id": "be061_be0614dfefc3665_ownership",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "9a01299c-c1da-4226-b41b-d857d07cba26",
+            "granted_at": "2026-10-22T08:19:06.581Z"
+          }
+        ],
+        "granted": true,
+        "orderStatus": "PAID"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "4f5d520a-92d9-4955-84f8-4eb7aa1e5327",
+          "event_id": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+          "execution_id": "3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+          "order_id": "be061_be0614dfefc3665_ownership",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:19:06.581Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:19:23.520463500Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "ENTITLEMENT_OWNERSHIP_MISMATCH",
+    "run": "run-be0614dfefc3665"
+  },
+  {
+    "event": {
+      "eventId": "e21b2f6c-2fc3-4345-9b43-ab195168a1e6",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:23:09.9307182+08:00",
+      "payload": {
+        "orderId": "be061_be06194ea83418d_final",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "9e5f986f-5924-4c21-be97-bce50a3359f3",
+    "observation": {
+      "startedAt": "2026-10-22T08:23:32.772328800Z",
+      "eventId": "e21b2f6c-2fc3-4345-9b43-ab195168a1e6",
+      "executionId": "9e5f986f-5924-4c21-be97-bce50a3359f3",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be06194ea83418d_final",
+          "startedAt": "2026-10-22T08:23:32.772328800Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:23:32.917911700Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be06194ea83418d_final/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:23:32.917911700Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:23:33.012037500Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=e21b2f6c-2fc3-4345-9b43-ab195168a1e6&executionId=9e5f986f-5924-4c21-be97-bce50a3359f3",
+          "startedAt": "2026-10-22T08:23:33.012037500Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:23:33.091667600Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be06194ea83418d_final",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:23:09.755Z",
+        "updated_at": "2026-10-22T08:23:09.930Z"
+      },
+      "entitlement": {
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be06194ea83418d_final",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "e21b2f6c-2fc3-4345-9b43-ab195168a1e6",
+            "granted_at": "2026-10-22T08:23:24.740Z"
+          }
+        ],
+        "entitlementType": "MEMBERSHIP",
+        "orderId": "be061_be06194ea83418d_final"
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "18107ac0-baeb-492c-998e-b321111d2e94",
+          "event_id": "e21b2f6c-2fc3-4345-9b43-ab195168a1e6",
+          "execution_id": "9e5f986f-5924-4c21-be97-bce50a3359f3",
+          "order_id": "be061_be06194ea83418d_final",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:23:24.740Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:23:33.091965200Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be06194ea83418d"
+  },
+  {
+    "event": {
+      "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:23:39.4559725+08:00",
+      "payload": {
+        "orderId": "be061_be06194ea83418d_origin",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+    "observation": {
+      "startedAt": "2026-10-22T08:24:08.597920800Z",
+      "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+      "executionId": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be06194ea83418d_origin",
+          "startedAt": "2026-10-22T08:24:08.598923400Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:24:08.780034600Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be06194ea83418d_origin/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:24:08.780034600Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:24:08.897950500Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=2a2a81cb-f355-4518-a401-b257bfc1c16b&executionId=5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+          "startedAt": "2026-10-22T08:24:08.897950500Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:24:09.020736700Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be06194ea83418d_origin",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:23:39.221Z",
+        "updated_at": "2026-10-22T08:23:39.455Z"
+      },
+      "entitlement": {
+        "entitlementType": "MEMBERSHIP",
+        "orderId": "be061_be06194ea83418d_origin",
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be06194ea83418d_origin",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+            "granted_at": "2026-10-22T08:23:58.368Z"
+          }
+        ]
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "a52f33af-c59e-4291-baa3-3d5d4094241e",
+          "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+          "execution_id": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+          "order_id": "be061_be06194ea83418d_origin",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "ORIGINAL",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:23:58.368Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:24:09.021371600Z"
+    },
+    "expectedVerified": false,
+    "expectedReason": "CONTRADICTORY_PROCESSING_FIELDS",
+    "run": "run-be06194ea83418d"
+  },
+  {
+    "event": {
+      "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+      "source": "ordivane-demo",
+      "eventType": "OrderPaid",
+      "schemaVersion": 1,
+      "occurredAt": "2026-10-22T16:23:39.4559725+08:00",
+      "payload": {
+        "orderId": "be061_be06194ea83418d_origin",
+        "entitlementType": "MEMBERSHIP"
+      }
+    },
+    "executionId": null,
+    "observation": {
+      "startedAt": "2026-10-22T08:24:18.188392200Z",
+      "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+      "executionId": null,
+      "historyComplete": false,
+      "processingRecordLimit": 100,
+      "available": true,
+      "queries": [
+        {
+          "path": "/api/v1/orders/be061_be06194ea83418d_origin",
+          "startedAt": "2026-10-22T08:24:18.189385900Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:24:18.333939200Z"
+        },
+        {
+          "path": "/api/v1/orders/be061_be06194ea83418d_origin/entitlements/MEMBERSHIP",
+          "startedAt": "2026-10-22T08:24:18.333939200Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:24:18.427690400Z"
+        },
+        {
+          "path": "/api/v1/processing-records?eventId=2a2a81cb-f355-4518-a401-b257bfc1c16b",
+          "startedAt": "2026-10-22T08:24:18.428058200Z",
+          "outcome": "HTTP_200",
+          "finishedAt": "2026-10-22T08:24:18.500251500Z"
+        }
+      ],
+      "order": {
+        "order_id": "be061_be06194ea83418d_origin",
+        "entitlement_type": "MEMBERSHIP",
+        "status": "PAID",
+        "version": 1,
+        "created_at": "2026-10-22T08:23:39.221Z",
+        "updated_at": "2026-10-22T08:23:39.455Z"
+      },
+      "entitlement": {
+        "entitlementType": "MEMBERSHIP",
+        "orderId": "be061_be06194ea83418d_origin",
+        "active": true,
+        "orderStatus": "PAID",
+        "granted": true,
+        "entitlements": [
+          {
+            "order_id": "be061_be06194ea83418d_origin",
+            "entitlement_type": "MEMBERSHIP",
+            "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+            "granted_at": "2026-10-22T08:23:58.368Z"
+          }
+        ]
+      },
+      "processingRecords": [
+        {
+          "attempt_id": "a52f33af-c59e-4291-baa3-3d5d4094241e",
+          "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+          "execution_id": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+          "order_id": "be061_be06194ea83418d_origin",
+          "entitlement_type": "MEMBERSHIP",
+          "origin": "RECOVERY",
+          "result": "GRANTED",
+          "processed_at": "2026-10-22T08:23:58.368Z"
+        }
+      ],
+      "finishedAt": "2026-10-22T08:24:18.500251500Z"
+    },
+    "expectedVerified": true,
+    "expectedReason": "BUSINESS_CONFIRMED",
+    "run": "run-be06194ea83418d"
+  }
+]

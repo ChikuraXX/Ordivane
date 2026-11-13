@@ -1,0 +1,786 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "持久恢复执行",
+    "version": "1.1.0",
+    "description": "BE-061已实现四动作、不可变核验、持久等待及受限取消；开发自测见HANDOFF，正式状态及独立QA由PM维护。"
+  },
+  "security": [
+    {
+      "session": []
+    }
+  ],
+  "paths": {
+    "/api/v1/recovery-plans/{id}/executions": {
+      "post": {
+        "operationId": "CreateExecution",
+        "x-status": "IMPLEMENTED",
+        "summary": "申请准确已批准版本的四动作执行，只有REPLAY占写资格并创建待发意图",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._:-]{1,128}$"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateExecution"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "动作身份持久提交；不表示业务成功。重复同请求返回原执行。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Execution"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "EXECUTION_TERMINAL：已结束且无原取消请求；code/message/traceId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/executions/{id}": {
+      "get": {
+        "operationId": "GetExecution",
+        "x-status": "IMPLEMENTED",
+        "summary": "人类查询投递、持久资格与不确定尝试",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "当前执行、资格及不可变观测/时间线；无发送或查证副作用。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Execution"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/executions/{id}/cancellations": {
+      "post": {
+        "operationId": "CancelExecution",
+        "x-status": "IMPLEMENTED",
+        "summary": "取消尚未发送的动作；已开始只记录取消请求，继续只读查证",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "仅受理已开始/不确定执行的取消请求，没有撤回外部副作用，也不停止只读核验",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Execution"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "EXECUTION_TERMINAL：已结束且无原取消请求；code/message/traceId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "既有code/message/traceId错误体",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "已证明未发送并原子取消，或重复返回原取消结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Execution"
+                }
+              }
+            }
+          }
+        },
+        "description": "OPERATOR人类会话+当前CSRF，无正文；任意操作员可取消。重复已受理请求返回同一执行；200实际取消/202受理但未实际取消。原成功/人工/查证预算结束的动作409。审计500可能已经提交，应GET核验。"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "session": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "JSESSIONID"
+      }
+    },
+    "schemas": {
+      "CreateExecution": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "digest"
+        ],
+        "properties": {
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "message",
+          "traceId"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "traceId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "Execution": {
+        "type": "object",
+        "required": [
+          "id",
+          "planId",
+          "requesterId",
+          "version",
+          "digest",
+          "eventId",
+          "businessKey",
+          "fingerprint",
+          "transportFingerprint",
+          "status",
+          "eligibilityHeld",
+          "businessVerified",
+          "checks",
+          "createdAt",
+          "attempts",
+          "action",
+          "actionCompleted",
+          "reason",
+          "verificationCount",
+          "verificationLimit",
+          "nextCheckAt",
+          "verificationDeadline",
+          "cancelRequestedAt",
+          "cancelledAt",
+          "releasedAt",
+          "observations",
+          "timeline",
+          "deliveryState",
+          "incidentStatus",
+          "verificationAttempts"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "planId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "requesterId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "digest": {
+            "type": "string"
+          },
+          "eventId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "businessKey": {
+            "type": "string"
+          },
+          "fingerprint": {
+            "type": "string"
+          },
+          "transportFingerprint": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "QUEUED",
+              "DELIVERED_UNVERIFIED",
+              "RETURNED",
+              "NACK",
+              "UNKNOWN",
+              "BLOCKED",
+              "WAITING",
+              "MANUAL_REQUIRED",
+              "SUCCEEDED",
+              "CANCELLED"
+            ]
+          },
+          "eligibilityHeld": {
+            "type": "boolean"
+          },
+          "businessVerified": {
+            "type": "boolean"
+          },
+          "checks": {
+            "type": "object",
+            "required": [
+              "CONFLICTING_EXECUTION",
+              "ATOMIC_EXECUTION_ELIGIBILITY"
+            ],
+            "properties": {
+              "CONFLICTING_EXECUTION": {
+                "enum": [
+                  "PASS",
+                  "NOT_APPLICABLE"
+                ]
+              },
+              "ATOMIC_EXECUTION_ELIGIBILITY": {
+                "enum": [
+                  "PASS",
+                  "NOT_APPLICABLE"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attempts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attempt"
+            }
+          },
+          "action": {
+            "enum": [
+              "REPLAY_ORIGINAL",
+              "VERIFY_ONLY",
+              "WAIT_AND_RECHECK",
+              "MANUAL_INTERVENTION"
+            ]
+          },
+          "actionCompleted": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "verificationCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "verificationLimit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "nextCheckAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "verificationDeadline": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "cancelRequestedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "cancelledAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "releasedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "observations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Observation"
+            }
+          },
+          "timeline": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "recordedAt",
+                "detail"
+              ],
+              "properties": {
+                "kind": {
+                  "type": "string"
+                },
+                "recordedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "detail": {
+                  "type": "object"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "deliveryState": {
+            "enum": [
+              null,
+              "PENDING",
+              "STARTED",
+              "DONE",
+              "BLOCKED",
+              "CANCELLED"
+            ]
+          },
+          "incidentStatus": {
+            "enum": [
+              "OPEN",
+              "RESOLVED"
+            ]
+          },
+          "verificationAttempts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "attemptId",
+                "fencingToken",
+                "claimedAt",
+                "leaseUntil",
+                "observationId"
+              ],
+              "properties": {
+                "attemptId": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "fencingToken": {
+                  "type": "integer"
+                },
+                "claimedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "leaseUntil": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "observationId": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        },
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "SUCCEEDED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "businessVerified": {
+                  "const": true
+                },
+                "actionCompleted": {
+                  "const": true
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "CANCELLED"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "businessVerified": {
+                  "const": false
+                },
+                "eligibilityHeld": {
+                  "const": false
+                },
+                "cancelledAt": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "Attempt": {
+        "type": "object",
+        "required": [
+          "attemptId",
+          "fencingToken",
+          "outcome",
+          "startedAt",
+          "finishedAt"
+        ],
+        "properties": {
+          "attemptId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fencingToken": {
+            "type": "integer"
+          },
+          "outcome": {
+            "enum": [
+              "UNKNOWN",
+              "ACK",
+              "RETURNED",
+              "NACK",
+              "CONFIRM_TIMEOUT",
+              "CONNECTION_LOST"
+            ]
+          },
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "finishedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Observation": {
+        "type": "object",
+        "required": [
+          "id",
+          "verified",
+          "reason",
+          "observedAt",
+          "contentSha256",
+          "content"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "observedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "contentSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "content": {
+            "type": "object",
+            "description": "三次查询的原始JSON、每次查询范围和起止时点、HTTP_200/UNAVAILABLE；historyComplete=false，processingRecordLimit=100。非原子远端快照，不宣称锁住退款。"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

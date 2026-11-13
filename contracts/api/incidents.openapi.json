@@ -1,0 +1,720 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "案件与不可变证据API",
+    "version": "1.1.0",
+    "description": "BE-030已接受；BE-061仅兼容演进OPEN/RESOLVED状态、筛选及解决字段，独立QA与PM接受另行记录。"
+  },
+  "paths": {
+    "/api/v1/incidents": {
+      "get": {
+        "operationId": "listIncidents",
+        "summary": "按created_at/id降序分页精确筛选，空态items=[]",
+        "security": [
+          {
+            "humanSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "同步操作完成；不代表恢复成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncidentPage"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN或CSRF_REJECTED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR；持久化或审计未确认",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0,
+              "maximum": 100000
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 20,
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "source",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_.-]{1,128}$"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "enum": [
+                "OPEN",
+                "RESOLVED"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/incidents/{id}": {
+      "get": {
+        "operationId": "getIncident",
+        "summary": "查询不可变事件和独立观察",
+        "security": [
+          {
+            "humanSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "同步操作完成；不代表恢复成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncidentDetail"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN或CSRF_REJECTED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR；持久化或审计未确认",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/incidents/{id}/evidence": {
+      "get": {
+        "operationId": "listIncidentEvidence",
+        "summary": "按collected_at/id降序查询全部历史快照，未采集为空数组",
+        "security": [
+          {
+            "humanSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "同步操作完成；不代表恢复成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Evidence"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN或CSRF_REJECTED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR；持久化或审计未确认",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/incidents/{id}/evidence-collections": {
+      "post": {
+        "operationId": "collectIncidentEvidence",
+        "summary": "同步采集真实演示HTTP事实，每次新增快照",
+        "security": [
+          {
+            "humanSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "同步操作完成；不代表恢复成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Collection"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "INVALID_REQUEST",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "UNAUTHENTICATED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "FORBIDDEN或CSRF_REJECTED",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "INTERNAL_ERROR；持久化或审计未确认",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "UNAVAILABLE；已追加DEPENDENCY_FAILED，查询证据列表",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "description": "仅OPERATOR且有效会话CSRF；无请求正文，非空正文400。远程请求不放长数据库事务。503前追加失败快照，可GET evidence查看；每次追加不可变快照。"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "humanSession": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "JSESSIONID"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "traceId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "traceId"
+        ]
+      },
+      "Incident": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "source": {
+            "type": "string"
+          },
+          "event_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "handler_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "OPEN",
+              "RESOLVED"
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resolved_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "resolved_execution_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "resolution_observation_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "event_id",
+          "handler_id",
+          "status",
+          "created_at",
+          "resolved_at",
+          "resolved_execution_id",
+          "resolution_observation_id"
+        ]
+      },
+      "IncidentPage": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Incident"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "page": {
+            "type": "integer"
+          },
+          "size": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "page",
+          "size"
+        ]
+      },
+      "IncidentDetail": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "source": {
+            "type": "string"
+          },
+          "event_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "handler_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "OPEN",
+              "RESOLVED"
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "original_event": {
+            "type": "string",
+            "description": "不可变规范OrderPaid JSON字符串"
+          },
+          "event_sha256": {
+            "type": "string"
+          },
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "report_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uuid"
+                },
+                "observation_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "uuid"
+                },
+                "kind": {
+                  "enum": [
+                    "REPORT",
+                    "RAW_DLX",
+                    "QUARANTINED"
+                  ]
+                },
+                "body": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "body_sha256": {
+                  "type": "string"
+                },
+                "event_conflict": {
+                  "type": "boolean"
+                },
+                "received_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "id",
+                "report_id",
+                "observation_id",
+                "kind",
+                "body",
+                "body_sha256",
+                "event_conflict",
+                "received_at"
+              ]
+            }
+          },
+          "resolved_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "resolved_execution_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "resolution_observation_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "event_id",
+          "handler_id",
+          "status",
+          "created_at",
+          "original_event",
+          "event_sha256",
+          "observations",
+          "resolved_at",
+          "resolved_execution_id",
+          "resolution_observation_id"
+        ]
+      },
+      "Evidence": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "incident_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "source": {
+            "const": "demo-http"
+          },
+          "collected_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "outcome": {
+            "enum": [
+              "COLLECTED",
+              "DEPENDENCY_FAILED"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "description": "规范快照JSON字符串；失败含code=UNAVAILABLE，成功含真实三GET及businessVerified"
+          },
+          "content_sha256": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "incident_id",
+          "source",
+          "collected_at",
+          "outcome",
+          "content",
+          "content_sha256"
+        ]
+      },
+      "Collection": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "evidenceId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "incidentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "outcome": {
+            "const": "COLLECTED"
+          },
+          "queryUrl": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidenceId",
+          "incidentId",
+          "outcome",
+          "queryUrl"
+        ]
+      }
+    }
+  }
+}

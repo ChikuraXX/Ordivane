@@ -1,0 +1,1392 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "人工恢复计划",
+    "version": "1.0.0",
+    "description": "BE-050已实现并自测；独立QA/PM接受另行确认。无执行API。"
+  },
+  "security": [
+    {
+      "session": []
+    }
+  ],
+  "paths": {
+    "/api/v1/incidents/{id}/recovery-plans": {
+      "post": {
+        "operationId": "CreateRecoveryPlan",
+        "x-status": "IMPLEMENTED_SELF_TESTED",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "同步结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plan"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Create"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/recovery-plans/{id}": {
+      "get": {
+        "operationId": "GetRecoveryPlan",
+        "x-status": "IMPLEMENTED_SELF_TESTED",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "同步结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plan"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/recovery-plans/{id}/prechecks": {
+      "post": {
+        "operationId": "ExactRecoveryPlan",
+        "x-status": "IMPLEMENTED_SELF_TESTED",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "同步结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Precheck"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Exact"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/recovery-plans/{id}/approval-requests": {
+      "post": {
+        "operationId": "RequestApprovalRecoveryPlan",
+        "x-status": "IMPLEMENTED_SELF_TESTED",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "同步结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plan"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestApproval"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/recovery-plans/{id}/approval-decisions": {
+      "post": {
+        "operationId": "DecisionRecoveryPlan",
+        "x-status": "IMPLEMENTED_SELF_TESTED",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-CSRF-TOKEN",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "同步结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Plan"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "见 recovery-plans.md 错误语义",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Decision"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "session": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "JSESSIONID"
+      }
+    },
+    "schemas": {
+      "Exact": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "digest"
+        ],
+        "properties": {
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      },
+      "Previous": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "version",
+          "digest"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      },
+      "Create": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "parameters",
+          "evidenceIds",
+          "previous"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "REPLAY_ORIGINAL",
+              "VERIFY_ONLY",
+              "WAIT_AND_RECHECK",
+              "MANUAL_INTERVENTION"
+            ]
+          },
+          "parameters": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [],
+                "properties": {}
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "delaySeconds"
+                ],
+                "properties": {
+                  "delaySeconds": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 3600
+                  }
+                }
+              }
+            ]
+          },
+          "evidenceIds": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 32,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "previous": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Previous"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "action": {
+                  "const": "WAIT_AND_RECHECK"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "delaySeconds"
+                  ],
+                  "properties": {
+                    "delaySeconds": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 3600
+                    }
+                  }
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "parameters": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [],
+                  "properties": {}
+                }
+              }
+            }
+          }
+        ]
+      },
+      "RequestApproval": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "digest",
+          "precheckId"
+        ],
+        "properties": {
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "precheckId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "Decision": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "digest",
+          "decision"
+        ],
+        "properties": {
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "APPROVE",
+              "REJECT"
+            ]
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "message",
+          "traceId"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "traceId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "Plan": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "incidentId",
+          "version",
+          "previousId",
+          "requesterId",
+          "action",
+          "parameters",
+          "evidenceIds",
+          "configurationDigest",
+          "eventDigest",
+          "actionDigest",
+          "digest",
+          "createdAt",
+          "expiresAt",
+          "recordedStatus",
+          "status",
+          "executionAuthorized",
+          "decisions",
+          "approvalRequests",
+          "prechecks"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "incidentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "previousId": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "requesterId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "REPLAY_ORIGINAL",
+              "VERIFY_ONLY",
+              "WAIT_AND_RECHECK",
+              "MANUAL_INTERVENTION"
+            ]
+          },
+          "parameters": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [],
+                "properties": {}
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "delaySeconds"
+                ],
+                "properties": {
+                  "delaySeconds": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 3600
+                  }
+                }
+              }
+            ]
+          },
+          "evidenceIds": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 32,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "configurationDigest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "eventDigest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "actionDigest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "recordedStatus": {
+            "type": "string",
+            "enum": [
+              "DRAFT",
+              "PENDING_APPROVAL",
+              "APPROVED",
+              "REJECTED"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "DRAFT",
+              "PENDING_APPROVAL",
+              "APPROVED",
+              "REJECTED",
+              "SUPERSEDED",
+              "EXPIRED",
+              "CONFIGURATION_CHANGED"
+            ]
+          },
+          "executionAuthorized": {
+            "const": false
+          },
+          "decisions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApprovalDecision"
+            }
+          },
+          "approvalRequests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApprovalRequest"
+            }
+          },
+          "prechecks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Precheck"
+            }
+          }
+        }
+      },
+      "Precheck": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "planId",
+          "version",
+          "digest",
+          "configurationDigest",
+          "createdAt",
+          "expiresAt",
+          "passed",
+          "reasons",
+          "facts",
+          "businessVerified",
+          "executionAuthorized",
+          "deferredChecks"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "planId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "configurationDigest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "reasons": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "EVENT_SCHEMA_INVALID",
+                "SCENARIO_OR_ACTION_UNREGISTERED",
+                "TARGET_UNREGISTERED",
+                "ORDER_NOT_PAID_OR_REFUNDED",
+                "ENTITLEMENT_EXISTS",
+                "DEPENDENCY_UNAVAILABLE"
+              ]
+            }
+          },
+          "facts": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Facts"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [],
+                "properties": {}
+              }
+            ]
+          },
+          "businessVerified": {
+            "type": "boolean"
+          },
+          "executionAuthorized": {
+            "const": false
+          },
+          "deferredChecks": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "const": "CONFLICTING_EXECUTION"
+              },
+              {
+                "const": "ATOMIC_EXECUTION_ELIGIBILITY"
+              }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      },
+      "Order": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "order_id",
+          "entitlement_type",
+          "status",
+          "version",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "entitlement_type": {
+            "const": "MEMBERSHIP"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "CREATED",
+              "PAID",
+              "REFUNDED"
+            ]
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "EntitlementEntry": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "order_id",
+          "entitlement_type",
+          "event_id",
+          "granted_at"
+        ],
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "entitlement_type": {
+            "const": "MEMBERSHIP"
+          },
+          "event_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "granted_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Entitlement": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "active",
+          "granted",
+          "orderId",
+          "entitlementType",
+          "orderStatus",
+          "entitlements"
+        ],
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "granted": {
+            "type": "boolean"
+          },
+          "orderId": {
+            "type": "string"
+          },
+          "entitlementType": {
+            "const": "MEMBERSHIP"
+          },
+          "orderStatus": {
+            "type": "string",
+            "enum": [
+              "CREATED",
+              "PAID",
+              "REFUNDED"
+            ]
+          },
+          "entitlements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntitlementEntry"
+            }
+          }
+        }
+      },
+      "ProcessingRecord": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "attempt_id",
+          "event_id",
+          "execution_id",
+          "order_id",
+          "entitlement_type",
+          "origin",
+          "result",
+          "processed_at"
+        ],
+        "properties": {
+          "attempt_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "event_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "execution_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "entitlement_type": {
+            "const": "MEMBERSHIP"
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "ORIGINAL",
+              "RECOVERY"
+            ]
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "GRANTED",
+              "ALREADY_GRANTED",
+              "REFUND_REJECTED"
+            ]
+          },
+          "processed_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Facts": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "order",
+          "entitlement",
+          "processingRecords",
+          "processingRecordLimit",
+          "historyComplete",
+          "businessVerified",
+          "executionId"
+        ],
+        "properties": {
+          "order": {
+            "$ref": "#/components/schemas/Order"
+          },
+          "entitlement": {
+            "$ref": "#/components/schemas/Entitlement"
+          },
+          "processingRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProcessingRecord"
+            }
+          },
+          "processingRecordLimit": {
+            "const": 100
+          },
+          "historyComplete": {
+            "const": false
+          },
+          "businessVerified": {
+            "type": "boolean"
+          },
+          "executionId": {
+            "type": "null"
+          }
+        }
+      },
+      "ApprovalRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "precheck_id",
+          "created_at"
+        ],
+        "properties": {
+          "precheck_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "该审批历史记录准确持久行的 UTC RFC3339 时刻，无损保留 PostgreSQL 微秒精度；不强制固定六位小数，整毫秒/整秒可省略末尾零，不截断或舍入非零微秒。",
+            "examples": [
+              "2026-10-26T06:57:51.229967Z",
+              "2026-10-26T06:57:51.123Z",
+              "2026-10-26T06:57:51Z"
+            ]
+          }
+        }
+      },
+      "ApprovalDecision": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "approver_id",
+          "decision",
+          "digest",
+          "created_at"
+        ],
+        "properties": {
+          "approver_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "APPROVE",
+              "REJECT"
+            ]
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "该审批历史记录准确持久行的 UTC RFC3339 时刻，无损保留 PostgreSQL 微秒精度；不强制固定六位小数，整毫秒/整秒可省略末尾零，不截断或舍入非零微秒。",
+            "examples": [
+              "2026-10-26T06:57:51.257001Z",
+              "2026-10-26T06:57:51.123Z",
+              "2026-10-26T06:57:51Z"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

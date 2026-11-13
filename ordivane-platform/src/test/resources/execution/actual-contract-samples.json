@@ -1,0 +1,2792 @@
+{
+  "executions": [
+    {
+      "id": "17b3a65a-a039-4bb1-be82-b5884da1a614",
+      "planId": "f648b848-8f0c-4118-913e-4dc5840d6a53",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "b2abbe79befb81cef1bc70a6c9207e31e2e3dfd29027ff03e6f6f83c733ba148",
+      "eventId": "a80bbe4f-2876-4399-a1c9-7ac8338babad",
+      "businessKey": "23bc2ce6b98ed73ce0e344514644191f93bb03d6bdd1e180e34b42b7f4d3d16a",
+      "fingerprint": "15d2d7286550afe70d6f39696bc91fe431aff3a944ebc55eb005acd436215f8f",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:17:17.429566Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "AWAITING_DISPATCH",
+      "deliveryState": "PENDING",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:17:17.437192Z",
+      "verificationDeadline": "2026-10-22T08:17:19.437192Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:17.439411Z",
+          "detail": {
+            "planDigest": "b2abbe79befb81cef1bc70a6c9207e31e2e3dfd29027ff03e6f6f83c733ba148",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "17b3a65a-a039-4bb1-be82-b5884da1a614",
+      "planId": "f648b848-8f0c-4118-913e-4dc5840d6a53",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "b2abbe79befb81cef1bc70a6c9207e31e2e3dfd29027ff03e6f6f83c733ba148",
+      "eventId": "a80bbe4f-2876-4399-a1c9-7ac8338babad",
+      "businessKey": "23bc2ce6b98ed73ce0e344514644191f93bb03d6bdd1e180e34b42b7f4d3d16a",
+      "fingerprint": "15d2d7286550afe70d6f39696bc91fe431aff3a944ebc55eb005acd436215f8f",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "CANCELLED",
+      "createdAt": "2026-10-22T08:17:17.429566Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": true,
+      "reason": "CANCELLED_BEFORE_SEND",
+      "deliveryState": "CANCELLED",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:17:19.437192Z",
+      "cancelRequestedAt": "2026-10-22T08:17:24.852459Z",
+      "cancelledAt": "2026-10-22T08:17:24.853813Z",
+      "releasedAt": "2026-10-22T08:17:24.856084Z",
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:17.439411Z",
+          "detail": {
+            "planDigest": "b2abbe79befb81cef1bc70a6c9207e31e2e3dfd29027ff03e6f6f83c733ba148",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        },
+        {
+          "kind": "ELIGIBILITY_RELEASED",
+          "recordedAt": "2026-10-22T08:17:24.861631Z",
+          "detail": {
+            "reason": "CANCELLED_BEFORE_SEND",
+            "observationId": ""
+          }
+        },
+        {
+          "kind": "CANCELLED",
+          "recordedAt": "2026-10-22T08:17:24.864438Z",
+          "detail": {
+            "externalEffectsWithdrawn": false,
+            "requestedBy": "3e097fd1-70ac-4486-908f-fd7d688692a2"
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "ef259ca5-2c97-492a-a543-6ccb6123648f",
+      "planId": "f648b848-8f0c-4118-913e-4dc5840d6a53",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "b2abbe79befb81cef1bc70a6c9207e31e2e3dfd29027ff03e6f6f83c733ba148",
+      "eventId": "a80bbe4f-2876-4399-a1c9-7ac8338babad",
+      "businessKey": "23bc2ce6b98ed73ce0e344514644191f93bb03d6bdd1e180e34b42b7f4d3d16a",
+      "fingerprint": "15d2d7286550afe70d6f39696bc91fe431aff3a944ebc55eb005acd436215f8f",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "CANCELLED",
+      "createdAt": "2026-10-22T08:17:25.239182Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": true,
+      "reason": "CANCELLED_BEFORE_SEND",
+      "deliveryState": "CANCELLED",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:17:27.242881Z",
+      "cancelRequestedAt": "2026-10-22T08:17:25.744742Z",
+      "cancelledAt": "2026-10-22T08:17:25.745871Z",
+      "releasedAt": "2026-10-22T08:17:25.746992Z",
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:25.243810Z",
+          "detail": {
+            "planVersion": 1,
+            "action": "REPLAY_ORIGINAL",
+            "planDigest": "b2abbe79befb81cef1bc70a6c9207e31e2e3dfd29027ff03e6f6f83c733ba148",
+            "eligibilityHeld": true
+          }
+        },
+        {
+          "kind": "ELIGIBILITY_RELEASED",
+          "recordedAt": "2026-10-22T08:17:25.747624Z",
+          "detail": {
+            "observationId": "",
+            "reason": "CANCELLED_BEFORE_SEND"
+          }
+        },
+        {
+          "kind": "CANCELLED",
+          "recordedAt": "2026-10-22T08:17:25.748250Z",
+          "detail": {
+            "externalEffectsWithdrawn": false,
+            "requestedBy": "3e097fd1-70ac-4486-908f-fd7d688692a2"
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "556bcf74-9d98-492b-bc32-d3755e39a483",
+      "planId": "fab6922c-df95-45fc-be6a-ff16d554a52e",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "4537c826f81d61e432a0d0b049b5c710c3d415033d7e492bac0b54f6eec06352",
+      "eventId": "5bbcc21e-d619-4056-9c6f-c9885d1e0810",
+      "businessKey": "169257b70678f32c0f442e8fee8aa799ffac9407fa6b19016eb70a161b20e262",
+      "fingerprint": "8360b3f890c5de365adca69a5b5be2fdcb2668831c2cba47111b6a767ddd3aa5",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "MANUAL_REQUIRED",
+      "createdAt": "2026-10-22T08:17:27.392014Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "MANUAL_INTERVENTION",
+      "actionCompleted": true,
+      "reason": "MANUAL_INTERVENTION_REQUIRED",
+      "deliveryState": null,
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 6,
+      "nextCheckAt": null,
+      "verificationDeadline": null,
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:27.393258Z",
+          "detail": {
+            "planDigest": "4537c826f81d61e432a0d0b049b5c710c3d415033d7e492bac0b54f6eec06352",
+            "action": "MANUAL_INTERVENTION",
+            "planVersion": 1,
+            "eligibilityHeld": false
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "c1aaef92-fd96-4ed4-9012-03164fcbafce",
+      "planId": "7f41c93c-5928-4008-ba61-834aa79b175e",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "5dc309ba4de0931df5b49b53335603afb4148e84bcd4b1f5876712ef4c63a031",
+      "eventId": "072f0306-268f-49c7-9891-972cd6611df6",
+      "businessKey": "f875ce84aa5fd37d658310a23b383ade786dbf3f1aec23066f739fb5fe0bcf0e",
+      "fingerprint": "809eac337ab6e2bc221e45f48d9006462a04a2ddf6f8ce2edf5cf247a1024faa",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:17:29.141350Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "AWAITING_DISPATCH",
+      "deliveryState": "PENDING",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:17:29.143253Z",
+      "verificationDeadline": "2026-10-22T08:17:31.143254Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:29.143774Z",
+          "detail": {
+            "planDigest": "5dc309ba4de0931df5b49b53335603afb4148e84bcd4b1f5876712ef4c63a031",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "c1aaef92-fd96-4ed4-9012-03164fcbafce",
+      "planId": "7f41c93c-5928-4008-ba61-834aa79b175e",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "5dc309ba4de0931df5b49b53335603afb4148e84bcd4b1f5876712ef4c63a031",
+      "eventId": "072f0306-268f-49c7-9891-972cd6611df6",
+      "businessKey": "f875ce84aa5fd37d658310a23b383ade786dbf3f1aec23066f739fb5fe0bcf0e",
+      "fingerprint": "809eac337ab6e2bc221e45f48d9006462a04a2ddf6f8ce2edf5cf247a1024faa",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "CANCELLED",
+      "createdAt": "2026-10-22T08:17:29.141350Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": true,
+      "reason": "CANCELLED_BEFORE_SEND",
+      "deliveryState": "CANCELLED",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:17:31.143254Z",
+      "cancelRequestedAt": "2026-10-22T08:17:37.559605Z",
+      "cancelledAt": "2026-10-22T08:17:37.560509Z",
+      "releasedAt": "2026-10-22T08:17:37.561327Z",
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:29.143774Z",
+          "detail": {
+            "planDigest": "5dc309ba4de0931df5b49b53335603afb4148e84bcd4b1f5876712ef4c63a031",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        },
+        {
+          "kind": "DISPATCH_BLOCKED",
+          "recordedAt": "2026-10-22T08:17:36.689264Z",
+          "detail": {
+            "fence": 1
+          }
+        },
+        {
+          "kind": "ELIGIBILITY_RELEASED",
+          "recordedAt": "2026-10-22T08:17:37.561780Z",
+          "detail": {
+            "observationId": "",
+            "reason": "CANCELLED_BEFORE_SEND"
+          }
+        },
+        {
+          "kind": "CANCELLED",
+          "recordedAt": "2026-10-22T08:17:37.562244Z",
+          "detail": {
+            "externalEffectsWithdrawn": false,
+            "requestedBy": "3e097fd1-70ac-4486-908f-fd7d688692a2"
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "14023f85-95ae-45a7-9b33-49da95de27dc",
+      "planId": "d020d545-6a09-4367-b72f-2a999090c5f0",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "09b2453b7f6efce1af7b2ef6649c78ac5f6e93880746d361de4502e5e4bea5ab",
+      "eventId": "652d008e-561a-49cc-93e8-f98db633d05e",
+      "businessKey": "313664c098adc73d1b3ff9ebb3ef9b35d67c1ce8eed16003be41996568b44f51",
+      "fingerprint": "3b86fc9f0253d7384ce43a66bd45e52b8fdf6ef6c70d514ce4d1db18bf8a7f48",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:17:39.185336Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "AWAITING_DISPATCH",
+      "deliveryState": "PENDING",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:17:39.187159Z",
+      "verificationDeadline": "2026-10-22T08:17:41.187160Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:39.187588Z",
+          "detail": {
+            "planDigest": "09b2453b7f6efce1af7b2ef6649c78ac5f6e93880746d361de4502e5e4bea5ab",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "400b64aa-0902-414a-89f0-8d2420f7d730",
+      "planId": "a4e49595-e351-4075-88c0-fdb9c04c89df",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "0a6c53cc3d552383a522f60a416ca115a2a33ac7d0d17e1df0fe2402a654f769",
+      "eventId": "6a2af2ad-af86-4437-b935-754d8cf77909",
+      "businessKey": "4bff4d86e671a79a55f06066c78696fd2640f86a013354c57aefa1eab0174bfb",
+      "fingerprint": "6ba21e5c0674f152683aa198e6c329fe0e3f436ec68eb9b21410a0d11c8a2b69",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:17:48.627402Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "VERIFY_ONLY",
+      "actionCompleted": false,
+      "reason": "AWAITING_VERIFICATION",
+      "deliveryState": null,
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:17:48.628446Z",
+      "verificationDeadline": "2026-10-22T08:17:50.628447Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:48.629029Z",
+          "detail": {
+            "planDigest": "0a6c53cc3d552383a522f60a416ca115a2a33ac7d0d17e1df0fe2402a654f769",
+            "action": "VERIFY_ONLY",
+            "planVersion": 1,
+            "eligibilityHeld": false
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "ad6e1126-d573-4d01-9dda-ecd63f7b4f78",
+      "planId": "5bcaf028-3966-4c14-b8ae-333a29714fd9",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "dd91b9bb8beb439f9046b688496bd2b3278aa7a0428b5782822336431afc97ce",
+      "eventId": "bad5f6e3-5fff-403e-afc8-606df5e42212",
+      "businessKey": "d14779c5e5dcf95834364a6de76ee75ac2f0d0964fa742c42701ab2aeff12b28",
+      "fingerprint": "38dd052245523522ba1358c681c6f996fb149099022c39cc252c8fc7bd032293",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:17:57.996415Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "AWAITING_DISPATCH",
+      "deliveryState": "PENDING",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:17:57.998124Z",
+      "verificationDeadline": "2026-10-22T08:17:59.998124Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:57.998476Z",
+          "detail": {
+            "planDigest": "dd91b9bb8beb439f9046b688496bd2b3278aa7a0428b5782822336431afc97ce",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "c1136cdd-580c-45b0-ab60-49af6c914779",
+      "planId": "63d3391e-2865-4b15-8b8e-5db42b788db5",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "df9615ff75f4983ef02ba92d607164c87717d3ef6df6be2f5de719ce261d8be9",
+      "eventId": "94d822aa-f3fe-458f-982d-6ed00eea55a0",
+      "businessKey": "170012f1f3e8d6298813904ba1fb2d72b26e7c7418e1b948edd5d19fddc15956",
+      "fingerprint": "12067149dfd7a8ec619c88764cb1c9a35ab896e863ef39f74c9dd9c19f701575",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:18:15.892592Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "VERIFY_ONLY",
+      "actionCompleted": false,
+      "reason": "AWAITING_VERIFICATION",
+      "deliveryState": null,
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:18:15.893516Z",
+      "verificationDeadline": "2026-10-22T08:18:17.893516Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:18:15.893855Z",
+          "detail": {
+            "planDigest": "df9615ff75f4983ef02ba92d607164c87717d3ef6df6be2f5de719ce261d8be9",
+            "action": "VERIFY_ONLY",
+            "planVersion": 1,
+            "eligibilityHeld": false
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+      "planId": "8422daa4-710c-4f7b-9235-b17439dac365",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "db04dd5dbe018bbe968d8ce25d1cbec378c36855bbb26a57a8d533931f18134f",
+      "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+      "businessKey": "a2337f731a538824d46ec50950655fafa529bde35cfaa61112d8fcfd83bf6f52",
+      "fingerprint": "0f106d2c2766be5643390d5a4a4a8d1a457a7a6e74ef4082cf037a5c759948b2",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:18:52.914576Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "AWAITING_DISPATCH",
+      "deliveryState": "PENDING",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:18:52.916728Z",
+      "verificationDeadline": "2026-10-22T08:18:54.916729Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:18:52.917146Z",
+          "detail": {
+            "planDigest": "db04dd5dbe018bbe968d8ce25d1cbec378c36855bbb26a57a8d533931f18134f",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "6e048e62-e0bb-444d-a26c-3489424c4fa8",
+      "planId": "7b638f76-e9f9-44e6-b015-c3804938ffd3",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 2,
+      "digest": "a2471a57bb6857338379ff4f17378cf9168ef6ce228f80bcda28f33d74ccbd63",
+      "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+      "businessKey": "a2337f731a538824d46ec50950655fafa529bde35cfaa61112d8fcfd83bf6f52",
+      "fingerprint": "953bf7fb05d73018696fd8790af90c251ad5aab189daa6bfec9f2604fd6d31dc",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:19:15.615669Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "VERIFY_ONLY",
+      "actionCompleted": false,
+      "reason": "AWAITING_VERIFICATION",
+      "deliveryState": null,
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:19:15.616541Z",
+      "verificationDeadline": "2026-10-22T08:19:17.616542Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:19:15.616936Z",
+          "detail": {
+            "planDigest": "a2471a57bb6857338379ff4f17378cf9168ef6ce228f80bcda28f33d74ccbd63",
+            "action": "VERIFY_ONLY",
+            "planVersion": 2,
+            "eligibilityHeld": false
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "7758f21f-413d-4604-a32c-ed03022d6f23",
+      "planId": "954f8cf8-2afd-40c8-acfb-df0c423f89a7",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "00aa589651c0252bd4356221e13cb2bf2315e8a0510094a57e543ad6608f33c4",
+      "eventId": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+      "businessKey": "2f35d27bab5976e7440d77565870e5ef66dc4100c2a660c372a938ea8833fde4",
+      "fingerprint": "cc2d4f969e86716f089e160122f209043406f2db832a68ecd82be2bc59635725",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "WAITING",
+      "createdAt": "2026-10-22T08:19:31.171057Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "WAIT_AND_RECHECK",
+      "actionCompleted": false,
+      "reason": "WAIT_UNTIL_DUE",
+      "deliveryState": null,
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:20:36.172112Z",
+      "verificationDeadline": "2026-10-22T08:20:38.172113Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:19:31.172538Z",
+          "detail": {
+            "planDigest": "00aa589651c0252bd4356221e13cb2bf2315e8a0510094a57e543ad6608f33c4",
+            "action": "WAIT_AND_RECHECK",
+            "planVersion": 1,
+            "eligibilityHeld": false
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "7758f21f-413d-4604-a32c-ed03022d6f23",
+      "planId": "954f8cf8-2afd-40c8-acfb-df0c423f89a7",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "00aa589651c0252bd4356221e13cb2bf2315e8a0510094a57e543ad6608f33c4",
+      "eventId": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+      "businessKey": "2f35d27bab5976e7440d77565870e5ef66dc4100c2a660c372a938ea8833fde4",
+      "fingerprint": "cc2d4f969e86716f089e160122f209043406f2db832a68ecd82be2bc59635725",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "SUCCEEDED",
+      "createdAt": "2026-10-22T08:19:31.171057Z",
+      "eligibilityHeld": false,
+      "businessVerified": true,
+      "action": "WAIT_AND_RECHECK",
+      "actionCompleted": true,
+      "reason": "BUSINESS_CONFIRMED",
+      "deliveryState": null,
+      "incidentStatus": "RESOLVED",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:20:38.172113Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [
+        {
+          "id": "d10c9308-2202-416f-a40a-24ca7d103aa9",
+          "verified": true,
+          "reason": "BUSINESS_CONFIRMED",
+          "observedAt": "2026-10-22T08:20:37.121963Z",
+          "contentSha256": "0f8045aab149719fd8237daacd8b37ed8b6d2c75e3b0c3ad8fccda0d882fe1db",
+          "content": {
+            "startedAt": "2026-10-22T08:20:36.777740Z",
+            "eventId": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+            "executionId": null,
+            "historyComplete": false,
+            "processingRecordLimit": 100,
+            "available": true,
+            "queries": [
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_waitexpired",
+                "startedAt": "2026-10-22T08:20:36.778745Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:20:36.917553100Z"
+              },
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_waitexpired/entitlements/MEMBERSHIP",
+                "startedAt": "2026-10-22T08:20:36.917553100Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:20:37.020456600Z"
+              },
+              {
+                "path": "/api/v1/processing-records?eventId=3a38d889-b522-4d3b-95fe-d928c1022d94",
+                "startedAt": "2026-10-22T08:20:37.020456600Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:20:37.118442200Z"
+              }
+            ],
+            "order": {
+              "order_id": "be061_be0614dfefc3665_waitexpired",
+              "entitlement_type": "MEMBERSHIP",
+              "status": "PAID",
+              "version": 1,
+              "created_at": "2026-10-22T08:19:29.691Z",
+              "updated_at": "2026-10-22T08:19:29.858Z"
+            },
+            "entitlement": {
+              "orderId": "be061_be0614dfefc3665_waitexpired",
+              "entitlementType": "MEMBERSHIP",
+              "entitlements": [
+                {
+                  "order_id": "be061_be0614dfefc3665_waitexpired",
+                  "entitlement_type": "MEMBERSHIP",
+                  "event_id": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+                  "granted_at": "2026-10-22T08:19:37.027Z"
+                }
+              ],
+              "granted": true,
+              "orderStatus": "PAID",
+              "active": true
+            },
+            "processingRecords": [
+              {
+                "attempt_id": "53403b99-8892-4b3e-b0de-72b712012e16",
+                "event_id": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+                "execution_id": null,
+                "order_id": "be061_be0614dfefc3665_waitexpired",
+                "entitlement_type": "MEMBERSHIP",
+                "origin": "ORIGINAL",
+                "result": "GRANTED",
+                "processed_at": "2026-10-22T08:19:37.027Z"
+              }
+            ],
+            "finishedAt": "2026-10-22T08:20:37.118442200Z"
+          }
+        }
+      ],
+      "verificationAttempts": [
+        {
+          "attemptId": "277f2b9f-a237-4453-a4ef-90cedba9f5da",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:20:36.775271Z",
+          "leaseUntil": "2026-10-22T08:20:51.775059Z",
+          "observationId": "d10c9308-2202-416f-a40a-24ca7d103aa9"
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:19:31.172538Z",
+          "detail": {
+            "planDigest": "00aa589651c0252bd4356221e13cb2bf2315e8a0510094a57e543ad6608f33c4",
+            "action": "WAIT_AND_RECHECK",
+            "planVersion": 1,
+            "eligibilityHeld": false
+          }
+        },
+        {
+          "kind": "BUSINESS_CONFIRMED",
+          "recordedAt": "2026-10-22T08:20:37.130694Z",
+          "detail": {
+            "observationId": "d10c9308-2202-416f-a40a-24ca7d103aa9"
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "ef259ca5-2c97-492a-a543-6ccb6123648f",
+      "planId": "f648b848-8f0c-4118-913e-4dc5840d6a53",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "b2abbe79befb81cef1bc70a6c9207e31e2e3dfd29027ff03e6f6f83c733ba148",
+      "eventId": "a80bbe4f-2876-4399-a1c9-7ac8338babad",
+      "businessKey": "23bc2ce6b98ed73ce0e344514644191f93bb03d6bdd1e180e34b42b7f4d3d16a",
+      "fingerprint": "15d2d7286550afe70d6f39696bc91fe431aff3a944ebc55eb005acd436215f8f",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:17:25.239182Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "AWAITING_DISPATCH",
+      "deliveryState": "PENDING",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:17:25.242880Z",
+      "verificationDeadline": "2026-10-22T08:17:27.242881Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:25.243810Z",
+          "detail": {
+            "planVersion": 1,
+            "action": "REPLAY_ORIGINAL",
+            "planDigest": "b2abbe79befb81cef1bc70a6c9207e31e2e3dfd29027ff03e6f6f83c733ba148",
+            "eligibilityHeld": true
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "c1aaef92-fd96-4ed4-9012-03164fcbafce",
+      "planId": "7f41c93c-5928-4008-ba61-834aa79b175e",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "5dc309ba4de0931df5b49b53335603afb4148e84bcd4b1f5876712ef4c63a031",
+      "eventId": "072f0306-268f-49c7-9891-972cd6611df6",
+      "businessKey": "f875ce84aa5fd37d658310a23b383ade786dbf3f1aec23066f739fb5fe0bcf0e",
+      "fingerprint": "809eac337ab6e2bc221e45f48d9006462a04a2ddf6f8ce2edf5cf247a1024faa",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "BLOCKED",
+      "createdAt": "2026-10-22T08:17:29.141350Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "DISPATCH_RECHECK_REJECTED",
+      "deliveryState": "BLOCKED",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:17:29.143253Z",
+      "verificationDeadline": "2026-10-22T08:17:31.143254Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:29.143774Z",
+          "detail": {
+            "planDigest": "5dc309ba4de0931df5b49b53335603afb4148e84bcd4b1f5876712ef4c63a031",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        },
+        {
+          "kind": "DISPATCH_BLOCKED",
+          "recordedAt": "2026-10-22T08:17:36.689264Z",
+          "detail": {
+            "fence": 1
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "400b64aa-0902-414a-89f0-8d2420f7d730",
+      "planId": "a4e49595-e351-4075-88c0-fdb9c04c89df",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "0a6c53cc3d552383a522f60a416ca115a2a33ac7d0d17e1df0fe2402a654f769",
+      "eventId": "6a2af2ad-af86-4437-b935-754d8cf77909",
+      "businessKey": "4bff4d86e671a79a55f06066c78696fd2640f86a013354c57aefa1eab0174bfb",
+      "fingerprint": "6ba21e5c0674f152683aa198e6c329fe0e3f436ec68eb9b21410a0d11c8a2b69",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "CANCELLED",
+      "createdAt": "2026-10-22T08:17:48.627402Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "VERIFY_ONLY",
+      "actionCompleted": true,
+      "reason": "CANCELLED_BEFORE_SEND",
+      "deliveryState": null,
+      "incidentStatus": "OPEN",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:17:50.628447Z",
+      "cancelRequestedAt": "2026-10-22T08:17:55.933466Z",
+      "cancelledAt": "2026-10-22T08:17:55.934662Z",
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [],
+      "verificationAttempts": [
+        {
+          "attemptId": "4a5e446d-4b95-43ed-a5ff-b2d9c56b80d6",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:17:55.912928Z",
+          "leaseUntil": "2026-10-22T08:18:10.912745Z",
+          "observationId": null
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:48.629029Z",
+          "detail": {
+            "planDigest": "0a6c53cc3d552383a522f60a416ca115a2a33ac7d0d17e1df0fe2402a654f769",
+            "action": "VERIFY_ONLY",
+            "planVersion": 1,
+            "eligibilityHeld": false
+          }
+        },
+        {
+          "kind": "CANCELLED",
+          "recordedAt": "2026-10-22T08:17:55.942680Z",
+          "detail": {
+            "externalEffectsWithdrawn": false,
+            "requestedBy": "3e097fd1-70ac-4486-908f-fd7d688692a2"
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "ad6e1126-d573-4d01-9dda-ecd63f7b4f78",
+      "planId": "5bcaf028-3966-4c14-b8ae-333a29714fd9",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "dd91b9bb8beb439f9046b688496bd2b3278aa7a0428b5782822336431afc97ce",
+      "eventId": "bad5f6e3-5fff-403e-afc8-606df5e42212",
+      "businessKey": "d14779c5e5dcf95834364a6de76ee75ac2f0d0964fa742c42701ab2aeff12b28",
+      "fingerprint": "38dd052245523522ba1358c681c6f996fb149099022c39cc252c8fc7bd032293",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "UNKNOWN",
+      "createdAt": "2026-10-22T08:17:57.996415Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": true,
+      "reason": "CURRENT_BUSINESS_NOT_CONFIRMED",
+      "deliveryState": "STARTED",
+      "incidentStatus": "OPEN",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:17:59.998124Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [
+        {
+          "id": "2217eb19-7e52-4524-bf0f-93bbaf58b468",
+          "verified": false,
+          "reason": "CURRENT_BUSINESS_NOT_CONFIRMED",
+          "observedAt": "2026-10-22T08:18:13.471503Z",
+          "contentSha256": "afcf8226d50333c933545b90e58a2a5fd9b19b6f943dd3316a1a9184c9491af5",
+          "content": {
+            "startedAt": "2026-10-22T08:18:13.155941200Z",
+            "eventId": "bad5f6e3-5fff-403e-afc8-606df5e42212",
+            "executionId": "ad6e1126-d573-4d01-9dda-ecd63f7b4f78",
+            "historyComplete": false,
+            "processingRecordLimit": 100,
+            "available": true,
+            "queries": [
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_deadline",
+                "startedAt": "2026-10-22T08:18:13.155941200Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:18:13.277913900Z"
+              },
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_deadline/entitlements/MEMBERSHIP",
+                "startedAt": "2026-10-22T08:18:13.277913900Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:18:13.369523900Z"
+              },
+              {
+                "path": "/api/v1/processing-records?eventId=bad5f6e3-5fff-403e-afc8-606df5e42212&executionId=ad6e1126-d573-4d01-9dda-ecd63f7b4f78",
+                "startedAt": "2026-10-22T08:18:13.369523900Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:18:13.461601600Z"
+              }
+            ],
+            "order": {
+              "order_id": "be061_be0614dfefc3665_deadline",
+              "entitlement_type": "MEMBERSHIP",
+              "status": "PAID",
+              "version": 1,
+              "created_at": "2026-10-22T08:17:56.568Z",
+              "updated_at": "2026-10-22T08:17:56.722Z"
+            },
+            "entitlement": {
+              "active": false,
+              "orderId": "be061_be0614dfefc3665_deadline",
+              "entitlementType": "MEMBERSHIP",
+              "entitlements": [],
+              "granted": false,
+              "orderStatus": "PAID"
+            },
+            "processingRecords": [],
+            "finishedAt": "2026-10-22T08:18:13.461850200Z"
+          }
+        }
+      ],
+      "verificationAttempts": [
+        {
+          "attemptId": "e991e5d0-8ebd-4f8a-b851-8eb2422d91e6",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:18:13.149904Z",
+          "leaseUntil": "2026-10-22T08:18:28.149631Z",
+          "observationId": "2217eb19-7e52-4524-bf0f-93bbaf58b468"
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:17:57.998476Z",
+          "detail": {
+            "planDigest": "dd91b9bb8beb439f9046b688496bd2b3278aa7a0428b5782822336431afc97ce",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        },
+        {
+          "kind": "SEND_STARTED",
+          "recordedAt": "2026-10-22T08:18:05.676612Z",
+          "detail": {
+            "attemptId": "9147e4d5-9f3c-42fc-9d0f-1f67f5a2ec05",
+            "fence": 1
+          }
+        },
+        {
+          "kind": "VERIFICATION_STOPPED",
+          "recordedAt": "2026-10-22T08:18:13.482296Z",
+          "detail": {
+            "reason": "CURRENT_BUSINESS_NOT_CONFIRMED",
+            "observationId": "2217eb19-7e52-4524-bf0f-93bbaf58b468",
+            "budgetExhausted": true
+          }
+        }
+      ],
+      "attempts": [
+        {
+          "attemptId": "9147e4d5-9f3c-42fc-9d0f-1f67f5a2ec05",
+          "fencingToken": 1,
+          "outcome": "UNKNOWN",
+          "startedAt": "2026-10-22T08:18:05.671930Z",
+          "finishedAt": null
+        }
+      ]
+    },
+    {
+      "id": "c1136cdd-580c-45b0-ab60-49af6c914779",
+      "planId": "63d3391e-2865-4b15-8b8e-5db42b788db5",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "df9615ff75f4983ef02ba92d607164c87717d3ef6df6be2f5de719ce261d8be9",
+      "eventId": "94d822aa-f3fe-458f-982d-6ed00eea55a0",
+      "businessKey": "170012f1f3e8d6298813904ba1fb2d72b26e7c7418e1b948edd5d19fddc15956",
+      "fingerprint": "12067149dfd7a8ec619c88764cb1c9a35ab896e863ef39f74c9dd9c19f701575",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "SUCCEEDED",
+      "createdAt": "2026-10-22T08:18:15.892592Z",
+      "eligibilityHeld": false,
+      "businessVerified": true,
+      "action": "VERIFY_ONLY",
+      "actionCompleted": true,
+      "reason": "BUSINESS_CONFIRMED",
+      "deliveryState": null,
+      "incidentStatus": "RESOLVED",
+      "verificationCount": 2,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:18:17.893516Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [
+        {
+          "id": "93d6fc87-7cf8-439e-bf78-1e3558708cda",
+          "verified": true,
+          "reason": "BUSINESS_CONFIRMED",
+          "observedAt": "2026-10-22T08:18:45.218183Z",
+          "contentSha256": "8b5d64512872e4fd75e7df9573b854bd688df7ef7a0bbdb1f3339bc878b5cb1c",
+          "content": {
+            "startedAt": "2026-10-22T08:18:44.939235500Z",
+            "eventId": "94d822aa-f3fe-458f-982d-6ed00eea55a0",
+            "executionId": null,
+            "historyComplete": false,
+            "processingRecordLimit": 100,
+            "available": true,
+            "queries": [
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_resultfence",
+                "startedAt": "2026-10-22T08:18:44.939743900Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:18:45.062542500Z"
+              },
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_resultfence/entitlements/MEMBERSHIP",
+                "startedAt": "2026-10-22T08:18:45.062542500Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:18:45.136174100Z"
+              },
+              {
+                "path": "/api/v1/processing-records?eventId=94d822aa-f3fe-458f-982d-6ed00eea55a0",
+                "startedAt": "2026-10-22T08:18:45.136174100Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:18:45.208674Z"
+              }
+            ],
+            "order": {
+              "order_id": "be061_be0614dfefc3665_resultfence",
+              "entitlement_type": "MEMBERSHIP",
+              "status": "PAID",
+              "version": 1,
+              "created_at": "2026-10-22T08:18:14.382Z",
+              "updated_at": "2026-10-22T08:18:14.544Z"
+            },
+            "entitlement": {
+              "active": true,
+              "orderStatus": "PAID",
+              "granted": true,
+              "entitlements": [
+                {
+                  "order_id": "be061_be0614dfefc3665_resultfence",
+                  "entitlement_type": "MEMBERSHIP",
+                  "event_id": "94d822aa-f3fe-458f-982d-6ed00eea55a0",
+                  "granted_at": "2026-10-22T08:18:21.237Z"
+                }
+              ],
+              "entitlementType": "MEMBERSHIP",
+              "orderId": "be061_be0614dfefc3665_resultfence"
+            },
+            "processingRecords": [
+              {
+                "attempt_id": "e2c03831-46b7-473f-9265-cb38ac2945b9",
+                "event_id": "94d822aa-f3fe-458f-982d-6ed00eea55a0",
+                "execution_id": null,
+                "order_id": "be061_be0614dfefc3665_resultfence",
+                "entitlement_type": "MEMBERSHIP",
+                "origin": "ORIGINAL",
+                "result": "GRANTED",
+                "processed_at": "2026-10-22T08:18:21.237Z"
+              }
+            ],
+            "finishedAt": "2026-10-22T08:18:45.208748200Z"
+          }
+        }
+      ],
+      "verificationAttempts": [
+        {
+          "attemptId": "059a8382-5aa0-45fe-b007-033497dee1c2",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:18:28.930093Z",
+          "leaseUntil": "2026-10-22T08:18:43.929906Z",
+          "observationId": null
+        },
+        {
+          "attemptId": "9dd74812-d2a6-4282-a84b-d2955dd087f1",
+          "fencingToken": 2,
+          "claimedAt": "2026-10-22T08:18:44.934281Z",
+          "leaseUntil": "2026-10-22T08:18:59.934163Z",
+          "observationId": "93d6fc87-7cf8-439e-bf78-1e3558708cda"
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:18:15.893855Z",
+          "detail": {
+            "planDigest": "df9615ff75f4983ef02ba92d607164c87717d3ef6df6be2f5de719ce261d8be9",
+            "action": "VERIFY_ONLY",
+            "planVersion": 1,
+            "eligibilityHeld": false
+          }
+        },
+        {
+          "kind": "BUSINESS_CONFIRMED",
+          "recordedAt": "2026-10-22T08:18:45.230367Z",
+          "detail": {
+            "observationId": "93d6fc87-7cf8-439e-bf78-1e3558708cda"
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+      "planId": "8422daa4-710c-4f7b-9235-b17439dac365",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "db04dd5dbe018bbe968d8ce25d1cbec378c36855bbb26a57a8d533931f18134f",
+      "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+      "businessKey": "a2337f731a538824d46ec50950655fafa529bde35cfaa61112d8fcfd83bf6f52",
+      "fingerprint": "0f106d2c2766be5643390d5a4a4a8d1a457a7a6e74ef4082cf037a5c759948b2",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "DELIVERED_UNVERIFIED",
+      "createdAt": "2026-10-22T08:18:52.914576Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "DELIVERY_FINISHED_UNVERIFIED",
+      "deliveryState": "DONE",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:18:52.916728Z",
+      "verificationDeadline": "2026-10-22T08:18:54.916729Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:18:52.917146Z",
+          "detail": {
+            "planDigest": "db04dd5dbe018bbe968d8ce25d1cbec378c36855bbb26a57a8d533931f18134f",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        },
+        {
+          "kind": "SEND_STARTED",
+          "recordedAt": "2026-10-22T08:19:00.676414Z",
+          "detail": {
+            "attemptId": "80cd1bdb-6619-4030-bbff-f437c0089a7e",
+            "fence": 1
+          }
+        },
+        {
+          "kind": "DELIVERY_FINISHED",
+          "recordedAt": "2026-10-22T08:19:00.821618Z",
+          "detail": {
+            "outcome": "ACK",
+            "fence": 1
+          }
+        }
+      ],
+      "attempts": [
+        {
+          "attemptId": "80cd1bdb-6619-4030-bbff-f437c0089a7e",
+          "fencingToken": 1,
+          "outcome": "ACK",
+          "startedAt": "2026-10-22T08:19:00.673350Z",
+          "finishedAt": "2026-10-22T08:19:00.820412Z"
+        }
+      ]
+    },
+    {
+      "id": "3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+      "planId": "8422daa4-710c-4f7b-9235-b17439dac365",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "db04dd5dbe018bbe968d8ce25d1cbec378c36855bbb26a57a8d533931f18134f",
+      "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+      "businessKey": "a2337f731a538824d46ec50950655fafa529bde35cfaa61112d8fcfd83bf6f52",
+      "fingerprint": "0f106d2c2766be5643390d5a4a4a8d1a457a7a6e74ef4082cf037a5c759948b2",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "UNKNOWN",
+      "createdAt": "2026-10-22T08:18:52.914576Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": true,
+      "reason": "PROCESSING_OWNERSHIP_MISMATCH",
+      "deliveryState": "DONE",
+      "incidentStatus": "OPEN",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:18:54.916729Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS",
+        "CONFLICTING_EXECUTION": "PASS"
+      },
+      "observations": [
+        {
+          "id": "d96f9f22-721d-476e-8e74-aa4016eca6a4",
+          "verified": false,
+          "reason": "PROCESSING_OWNERSHIP_MISMATCH",
+          "observedAt": "2026-10-22T08:19:14.841490Z",
+          "contentSha256": "54a0de61e71c18e82c7656e68f1be69c0186bff42fa1d795054303f602f0e4df",
+          "content": {
+            "startedAt": "2026-10-22T08:19:14.508959700Z",
+            "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+            "executionId": "3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+            "historyComplete": false,
+            "processingRecordLimit": 100,
+            "available": true,
+            "queries": [
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_ownership",
+                "startedAt": "2026-10-22T08:19:14.508959700Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:19:14.643539300Z"
+              },
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_ownership/entitlements/MEMBERSHIP",
+                "startedAt": "2026-10-22T08:19:14.643539300Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:19:14.739957800Z"
+              },
+              {
+                "path": "/api/v1/processing-records?eventId=286de5a7-5ee1-47f3-ab21-0035ad3e6159&executionId=3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+                "startedAt": "2026-10-22T08:19:14.739957800Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:19:14.830717300Z"
+              }
+            ],
+            "order": {
+              "order_id": "be061_be0614dfefc3665_ownership",
+              "entitlement_type": "MEMBERSHIP",
+              "status": "PAID",
+              "version": 1,
+              "created_at": "2026-10-22T08:18:51.388Z",
+              "updated_at": "2026-10-22T08:18:51.565Z"
+            },
+            "entitlement": {
+              "active": true,
+              "orderId": "be061_be0614dfefc3665_ownership",
+              "entitlementType": "MEMBERSHIP",
+              "entitlements": [
+                {
+                  "order_id": "be061_be0614dfefc3665_ownership",
+                  "entitlement_type": "MEMBERSHIP",
+                  "event_id": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+                  "granted_at": "2026-10-22T08:19:06.581Z"
+                }
+              ],
+              "granted": true,
+              "orderStatus": "PAID"
+            },
+            "processingRecords": [
+              {
+                "attempt_id": "4f5d520a-92d9-4955-84f8-4eb7aa1e5327",
+                "event_id": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+                "execution_id": "52aeec52-0442-4a58-b08b-bf34c6993fe5",
+                "order_id": "be061_be0614dfefc3665_ownership",
+                "entitlement_type": "MEMBERSHIP",
+                "origin": "RECOVERY",
+                "result": "GRANTED",
+                "processed_at": "2026-10-22T08:19:06.581Z"
+              }
+            ],
+            "finishedAt": "2026-10-22T08:19:14.830717300Z"
+          }
+        }
+      ],
+      "verificationAttempts": [
+        {
+          "attemptId": "6441482d-8574-4573-9412-0e370720c996",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:19:14.503100Z",
+          "leaseUntil": "2026-10-22T08:19:29.502884Z",
+          "observationId": "d96f9f22-721d-476e-8e74-aa4016eca6a4"
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:18:52.917146Z",
+          "detail": {
+            "planDigest": "db04dd5dbe018bbe968d8ce25d1cbec378c36855bbb26a57a8d533931f18134f",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1,
+            "eligibilityHeld": true
+          }
+        },
+        {
+          "kind": "SEND_STARTED",
+          "recordedAt": "2026-10-22T08:19:00.676414Z",
+          "detail": {
+            "attemptId": "80cd1bdb-6619-4030-bbff-f437c0089a7e",
+            "fence": 1
+          }
+        },
+        {
+          "kind": "DELIVERY_FINISHED",
+          "recordedAt": "2026-10-22T08:19:00.821618Z",
+          "detail": {
+            "outcome": "ACK",
+            "fence": 1
+          }
+        },
+        {
+          "kind": "VERIFICATION_STOPPED",
+          "recordedAt": "2026-10-22T08:19:14.850336Z",
+          "detail": {
+            "reason": "PROCESSING_OWNERSHIP_MISMATCH",
+            "observationId": "d96f9f22-721d-476e-8e74-aa4016eca6a4",
+            "budgetExhausted": true
+          }
+        }
+      ],
+      "attempts": [
+        {
+          "attemptId": "80cd1bdb-6619-4030-bbff-f437c0089a7e",
+          "fencingToken": 1,
+          "outcome": "ACK",
+          "startedAt": "2026-10-22T08:19:00.673350Z",
+          "finishedAt": "2026-10-22T08:19:00.820412Z"
+        }
+      ]
+    },
+    {
+      "id": "6e048e62-e0bb-444d-a26c-3489424c4fa8",
+      "planId": "7b638f76-e9f9-44e6-b015-c3804938ffd3",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 2,
+      "digest": "a2471a57bb6857338379ff4f17378cf9168ef6ce228f80bcda28f33d74ccbd63",
+      "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+      "businessKey": "a2337f731a538824d46ec50950655fafa529bde35cfaa61112d8fcfd83bf6f52",
+      "fingerprint": "953bf7fb05d73018696fd8790af90c251ad5aab189daa6bfec9f2604fd6d31dc",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "UNKNOWN",
+      "createdAt": "2026-10-22T08:19:15.615669Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "VERIFY_ONLY",
+      "actionCompleted": true,
+      "reason": "ENTITLEMENT_OWNERSHIP_MISMATCH",
+      "deliveryState": null,
+      "incidentStatus": "OPEN",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:19:17.616542Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [
+        {
+          "id": "aa1b4b82-25a1-49d2-a90c-b4f5724e42c9",
+          "verified": false,
+          "reason": "ENTITLEMENT_OWNERSHIP_MISMATCH",
+          "observedAt": "2026-10-22T08:19:23.532064Z",
+          "contentSha256": "f79d560313f5a2ffae16eae6f69348af8d4be46cf2ba8315ad13fd41fc0ff614",
+          "content": {
+            "startedAt": "2026-10-22T08:19:23.218227100Z",
+            "eventId": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+            "executionId": null,
+            "historyComplete": false,
+            "processingRecordLimit": 100,
+            "available": true,
+            "queries": [
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_ownership",
+                "startedAt": "2026-10-22T08:19:23.218227100Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:19:23.353559400Z"
+              },
+              {
+                "path": "/api/v1/orders/be061_be0614dfefc3665_ownership/entitlements/MEMBERSHIP",
+                "startedAt": "2026-10-22T08:19:23.353559400Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:19:23.448019500Z"
+              },
+              {
+                "path": "/api/v1/processing-records?eventId=286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+                "startedAt": "2026-10-22T08:19:23.448019500Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:19:23.520463500Z"
+              }
+            ],
+            "order": {
+              "order_id": "be061_be0614dfefc3665_ownership",
+              "entitlement_type": "MEMBERSHIP",
+              "status": "PAID",
+              "version": 1,
+              "created_at": "2026-10-22T08:18:51.388Z",
+              "updated_at": "2026-10-22T08:18:51.565Z"
+            },
+            "entitlement": {
+              "active": true,
+              "orderId": "be061_be0614dfefc3665_ownership",
+              "entitlementType": "MEMBERSHIP",
+              "entitlements": [
+                {
+                  "order_id": "be061_be0614dfefc3665_ownership",
+                  "entitlement_type": "MEMBERSHIP",
+                  "event_id": "9a01299c-c1da-4226-b41b-d857d07cba26",
+                  "granted_at": "2026-10-22T08:19:06.581Z"
+                }
+              ],
+              "granted": true,
+              "orderStatus": "PAID"
+            },
+            "processingRecords": [
+              {
+                "attempt_id": "4f5d520a-92d9-4955-84f8-4eb7aa1e5327",
+                "event_id": "286de5a7-5ee1-47f3-ab21-0035ad3e6159",
+                "execution_id": "3f1ca1ce-0013-4f53-8250-55e0e41eeaae",
+                "order_id": "be061_be0614dfefc3665_ownership",
+                "entitlement_type": "MEMBERSHIP",
+                "origin": "RECOVERY",
+                "result": "GRANTED",
+                "processed_at": "2026-10-22T08:19:06.581Z"
+              }
+            ],
+            "finishedAt": "2026-10-22T08:19:23.520463500Z"
+          }
+        }
+      ],
+      "verificationAttempts": [
+        {
+          "attemptId": "ddd111ee-177f-4e15-9f21-51b024c42223",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:19:23.212668Z",
+          "leaseUntil": "2026-10-22T08:19:38.212453Z",
+          "observationId": "aa1b4b82-25a1-49d2-a90c-b4f5724e42c9"
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:19:15.616936Z",
+          "detail": {
+            "planDigest": "a2471a57bb6857338379ff4f17378cf9168ef6ce228f80bcda28f33d74ccbd63",
+            "action": "VERIFY_ONLY",
+            "planVersion": 2,
+            "eligibilityHeld": false
+          }
+        },
+        {
+          "kind": "VERIFICATION_STOPPED",
+          "recordedAt": "2026-10-22T08:19:23.541979Z",
+          "detail": {
+            "observationId": "aa1b4b82-25a1-49d2-a90c-b4f5724e42c9",
+            "budgetExhausted": true,
+            "reason": "ENTITLEMENT_OWNERSHIP_MISMATCH"
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "7758f21f-413d-4604-a32c-ed03022d6f23",
+      "planId": "954f8cf8-2afd-40c8-acfb-df0c423f89a7",
+      "requesterId": "3e097fd1-70ac-4486-908f-fd7d688692a2",
+      "version": 1,
+      "digest": "00aa589651c0252bd4356221e13cb2bf2315e8a0510094a57e543ad6608f33c4",
+      "eventId": "3a38d889-b522-4d3b-95fe-d928c1022d94",
+      "businessKey": "2f35d27bab5976e7440d77565870e5ef66dc4100c2a660c372a938ea8833fde4",
+      "fingerprint": "cc2d4f969e86716f089e160122f209043406f2db832a68ecd82be2bc59635725",
+      "transportFingerprint": "66487cbc5d8aebcfa4181f270c8a869a287188cb6208ff135307026c565d2191",
+      "status": "WAITING",
+      "createdAt": "2026-10-22T08:19:31.171057Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "WAIT_AND_RECHECK",
+      "actionCompleted": false,
+      "reason": "WAIT_UNTIL_DUE",
+      "deliveryState": null,
+      "incidentStatus": "OPEN",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:20:36.172112Z",
+      "verificationDeadline": "2026-10-22T08:20:38.172113Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE",
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE"
+      },
+      "observations": [],
+      "verificationAttempts": [
+        {
+          "attemptId": "277f2b9f-a237-4453-a4ef-90cedba9f5da",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:20:36.775271Z",
+          "leaseUntil": "2026-10-22T08:20:51.775059Z",
+          "observationId": null
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:19:31.172538Z",
+          "detail": {
+            "planDigest": "00aa589651c0252bd4356221e13cb2bf2315e8a0510094a57e543ad6608f33c4",
+            "action": "WAIT_AND_RECHECK",
+            "planVersion": 1,
+            "eligibilityHeld": false
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "9e5f986f-5924-4c21-be97-bce50a3359f3",
+      "planId": "347b3021-d020-4adc-8f40-f6e60f23d8b0",
+      "requesterId": "0e9f98d4-5ee1-4ece-a3d6-508e62ed9ab2",
+      "version": 1,
+      "digest": "944afedf7a6ac5b1233d2fef6d338f7c50d7a84db9ad2c9cc97a8001f3b3b821",
+      "eventId": "e21b2f6c-2fc3-4345-9b43-ab195168a1e6",
+      "businessKey": "8bf770942547e5cbef5ef1d5356bcbe717cc96def01a47eb6ae40291e7d14c58",
+      "fingerprint": "2ccb6463cbd77425fbc595e3fef6379442a475325ee7fbc2725bcd1234302848",
+      "transportFingerprint": "586b0b0267b5a4d382a86b5ee29607fda96455fdf3e316b3373942bbfe5be5c1",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:23:11.482557Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "AWAITING_DISPATCH",
+      "deliveryState": "PENDING",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:23:11.490495Z",
+      "verificationDeadline": "2026-10-22T08:23:19.490496Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "CONFLICTING_EXECUTION": "PASS",
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:23:11.492602Z",
+          "detail": {
+            "eligibilityHeld": true,
+            "planDigest": "944afedf7a6ac5b1233d2fef6d338f7c50d7a84db9ad2c9cc97a8001f3b3b821",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+      "planId": "52876d59-4c97-4fa6-81f0-a744d86d40b9",
+      "requesterId": "0e9f98d4-5ee1-4ece-a3d6-508e62ed9ab2",
+      "version": 1,
+      "digest": "927bbe0cd82833b284c2f6fee5c0b514024b65571945658b5bde4078985aa895",
+      "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+      "businessKey": "a8e7df883ad158d619d0d0992728d7ebd3c502d715b252f9e14ea277a136887a",
+      "fingerprint": "2feb13df61ea4a9195634438091e306c1b6fce02e46bf4c80a759aede86992cb",
+      "transportFingerprint": "586b0b0267b5a4d382a86b5ee29607fda96455fdf3e316b3373942bbfe5be5c1",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:23:41.164274Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": false,
+      "reason": "AWAITING_DISPATCH",
+      "deliveryState": "PENDING",
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:23:41.166954Z",
+      "verificationDeadline": "2026-10-22T08:23:49.166955Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "CONFLICTING_EXECUTION": "PASS",
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:23:41.167808Z",
+          "detail": {
+            "eligibilityHeld": true,
+            "planDigest": "927bbe0cd82833b284c2f6fee5c0b514024b65571945658b5bde4078985aa895",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "c89f27af-fc56-40e7-9014-e6df066ef9f8",
+      "planId": "225238df-388d-4541-9298-260dc7951a19",
+      "requesterId": "0e9f98d4-5ee1-4ece-a3d6-508e62ed9ab2",
+      "version": 2,
+      "digest": "802616e00c1e60274c7353671ae630fcdd6c8de9ec75cc894f73f8147d611220",
+      "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+      "businessKey": "a8e7df883ad158d619d0d0992728d7ebd3c502d715b252f9e14ea277a136887a",
+      "fingerprint": "51e605e834a497e7404e09e8b20f68d4153539e14adb5d9d615ef854a7271f45",
+      "transportFingerprint": "586b0b0267b5a4d382a86b5ee29607fda96455fdf3e316b3373942bbfe5be5c1",
+      "status": "QUEUED",
+      "createdAt": "2026-10-22T08:24:10.218257Z",
+      "eligibilityHeld": false,
+      "businessVerified": false,
+      "action": "VERIFY_ONLY",
+      "actionCompleted": false,
+      "reason": "AWAITING_VERIFICATION",
+      "deliveryState": null,
+      "incidentStatus": "OPEN",
+      "verificationCount": 0,
+      "verificationLimit": 3,
+      "nextCheckAt": "2026-10-22T08:24:10.219513Z",
+      "verificationDeadline": "2026-10-22T08:24:18.219513Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE",
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE"
+      },
+      "observations": [],
+      "verificationAttempts": [],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:24:10.220299Z",
+          "detail": {
+            "eligibilityHeld": false,
+            "planDigest": "802616e00c1e60274c7353671ae630fcdd6c8de9ec75cc894f73f8147d611220",
+            "action": "VERIFY_ONLY",
+            "planVersion": 2
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "9e5f986f-5924-4c21-be97-bce50a3359f3",
+      "planId": "347b3021-d020-4adc-8f40-f6e60f23d8b0",
+      "requesterId": "0e9f98d4-5ee1-4ece-a3d6-508e62ed9ab2",
+      "version": 1,
+      "digest": "944afedf7a6ac5b1233d2fef6d338f7c50d7a84db9ad2c9cc97a8001f3b3b821",
+      "eventId": "e21b2f6c-2fc3-4345-9b43-ab195168a1e6",
+      "businessKey": "8bf770942547e5cbef5ef1d5356bcbe717cc96def01a47eb6ae40291e7d14c58",
+      "fingerprint": "2ccb6463cbd77425fbc595e3fef6379442a475325ee7fbc2725bcd1234302848",
+      "transportFingerprint": "586b0b0267b5a4d382a86b5ee29607fda96455fdf3e316b3373942bbfe5be5c1",
+      "status": "SUCCEEDED",
+      "createdAt": "2026-10-22T08:23:11.482557Z",
+      "eligibilityHeld": false,
+      "businessVerified": true,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": true,
+      "reason": "BUSINESS_CONFIRMED",
+      "deliveryState": "DONE",
+      "incidentStatus": "RESOLVED",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:23:19.490496Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": "2026-10-22T08:23:33.112205Z",
+      "checks": {
+        "CONFLICTING_EXECUTION": "PASS",
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS"
+      },
+      "observations": [
+        {
+          "id": "9c9aa2de-17a4-40a2-9ac9-f4d9c66b20ca",
+          "verified": true,
+          "reason": "BUSINESS_CONFIRMED",
+          "observedAt": "2026-10-22T08:23:33.103899Z",
+          "contentSha256": "269e120b1fee84cba81403910effc2bc64ba0e063cf4349a1dce4838b8eae517",
+          "content": {
+            "startedAt": "2026-10-22T08:23:32.772328800Z",
+            "eventId": "e21b2f6c-2fc3-4345-9b43-ab195168a1e6",
+            "executionId": "9e5f986f-5924-4c21-be97-bce50a3359f3",
+            "historyComplete": false,
+            "processingRecordLimit": 100,
+            "available": true,
+            "queries": [
+              {
+                "path": "/api/v1/orders/be061_be06194ea83418d_final",
+                "startedAt": "2026-10-22T08:23:32.772328800Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:23:32.917911700Z"
+              },
+              {
+                "path": "/api/v1/orders/be061_be06194ea83418d_final/entitlements/MEMBERSHIP",
+                "startedAt": "2026-10-22T08:23:32.917911700Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:23:33.012037500Z"
+              },
+              {
+                "path": "/api/v1/processing-records?eventId=e21b2f6c-2fc3-4345-9b43-ab195168a1e6&executionId=9e5f986f-5924-4c21-be97-bce50a3359f3",
+                "startedAt": "2026-10-22T08:23:33.012037500Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:23:33.091667600Z"
+              }
+            ],
+            "order": {
+              "order_id": "be061_be06194ea83418d_final",
+              "entitlement_type": "MEMBERSHIP",
+              "status": "PAID",
+              "version": 1,
+              "created_at": "2026-10-22T08:23:09.755Z",
+              "updated_at": "2026-10-22T08:23:09.930Z"
+            },
+            "entitlement": {
+              "active": true,
+              "orderStatus": "PAID",
+              "granted": true,
+              "entitlements": [
+                {
+                  "order_id": "be061_be06194ea83418d_final",
+                  "entitlement_type": "MEMBERSHIP",
+                  "event_id": "e21b2f6c-2fc3-4345-9b43-ab195168a1e6",
+                  "granted_at": "2026-10-22T08:23:24.740Z"
+                }
+              ],
+              "entitlementType": "MEMBERSHIP",
+              "orderId": "be061_be06194ea83418d_final"
+            },
+            "processingRecords": [
+              {
+                "attempt_id": "18107ac0-baeb-492c-998e-b321111d2e94",
+                "event_id": "e21b2f6c-2fc3-4345-9b43-ab195168a1e6",
+                "execution_id": "9e5f986f-5924-4c21-be97-bce50a3359f3",
+                "order_id": "be061_be06194ea83418d_final",
+                "entitlement_type": "MEMBERSHIP",
+                "origin": "RECOVERY",
+                "result": "GRANTED",
+                "processed_at": "2026-10-22T08:23:24.740Z"
+              }
+            ],
+            "finishedAt": "2026-10-22T08:23:33.091965200Z"
+          }
+        }
+      ],
+      "verificationAttempts": [
+        {
+          "attemptId": "de1eaef0-5440-4860-8910-90c0cf95e888",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:23:32.764593Z",
+          "leaseUntil": "2026-10-22T08:23:47.764405Z",
+          "observationId": "9c9aa2de-17a4-40a2-9ac9-f4d9c66b20ca"
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:23:11.492602Z",
+          "detail": {
+            "eligibilityHeld": true,
+            "planDigest": "944afedf7a6ac5b1233d2fef6d338f7c50d7a84db9ad2c9cc97a8001f3b3b821",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1
+          }
+        },
+        {
+          "kind": "SEND_STARTED",
+          "recordedAt": "2026-10-22T08:23:19.236961Z",
+          "detail": {
+            "fence": 1,
+            "attemptId": "3117a186-f985-425b-9d18-e4a61f29ca11"
+          }
+        },
+        {
+          "kind": "DELIVERY_FINISHED",
+          "recordedAt": "2026-10-22T08:23:19.378851Z",
+          "detail": {
+            "fence": 1,
+            "outcome": "ACK"
+          }
+        },
+        {
+          "kind": "ELIGIBILITY_RELEASED",
+          "recordedAt": "2026-10-22T08:23:33.120041Z",
+          "detail": {
+            "reason": "BUSINESS_CONFIRMED",
+            "observationId": "9c9aa2de-17a4-40a2-9ac9-f4d9c66b20ca"
+          }
+        },
+        {
+          "kind": "BUSINESS_CONFIRMED",
+          "recordedAt": "2026-10-22T08:23:33.122735Z",
+          "detail": {
+            "observationId": "9c9aa2de-17a4-40a2-9ac9-f4d9c66b20ca"
+          }
+        }
+      ],
+      "attempts": [
+        {
+          "attemptId": "3117a186-f985-425b-9d18-e4a61f29ca11",
+          "fencingToken": 1,
+          "outcome": "ACK",
+          "startedAt": "2026-10-22T08:23:19.232885Z",
+          "finishedAt": "2026-10-22T08:23:19.377529Z"
+        }
+      ]
+    },
+    {
+      "id": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+      "planId": "52876d59-4c97-4fa6-81f0-a744d86d40b9",
+      "requesterId": "0e9f98d4-5ee1-4ece-a3d6-508e62ed9ab2",
+      "version": 1,
+      "digest": "927bbe0cd82833b284c2f6fee5c0b514024b65571945658b5bde4078985aa895",
+      "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+      "businessKey": "a8e7df883ad158d619d0d0992728d7ebd3c502d715b252f9e14ea277a136887a",
+      "fingerprint": "2feb13df61ea4a9195634438091e306c1b6fce02e46bf4c80a759aede86992cb",
+      "transportFingerprint": "586b0b0267b5a4d382a86b5ee29607fda96455fdf3e316b3373942bbfe5be5c1",
+      "status": "UNKNOWN",
+      "createdAt": "2026-10-22T08:23:41.164274Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": true,
+      "reason": "CONTRADICTORY_PROCESSING_FIELDS",
+      "deliveryState": "DONE",
+      "incidentStatus": "OPEN",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:23:49.166955Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "CONFLICTING_EXECUTION": "PASS",
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS"
+      },
+      "observations": [
+        {
+          "id": "ca70135c-6f4c-4cfd-9217-6bb98db20efb",
+          "verified": false,
+          "reason": "CONTRADICTORY_PROCESSING_FIELDS",
+          "observedAt": "2026-10-22T08:24:09.035506Z",
+          "contentSha256": "de3ec0008d01f30f6988ef9032b08bf584b01bee162bdb774dd62d6f08bac84f",
+          "content": {
+            "startedAt": "2026-10-22T08:24:08.597920800Z",
+            "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+            "executionId": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+            "historyComplete": false,
+            "processingRecordLimit": 100,
+            "available": true,
+            "queries": [
+              {
+                "path": "/api/v1/orders/be061_be06194ea83418d_origin",
+                "startedAt": "2026-10-22T08:24:08.598923400Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:24:08.780034600Z"
+              },
+              {
+                "path": "/api/v1/orders/be061_be06194ea83418d_origin/entitlements/MEMBERSHIP",
+                "startedAt": "2026-10-22T08:24:08.780034600Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:24:08.897950500Z"
+              },
+              {
+                "path": "/api/v1/processing-records?eventId=2a2a81cb-f355-4518-a401-b257bfc1c16b&executionId=5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+                "startedAt": "2026-10-22T08:24:08.897950500Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:24:09.020736700Z"
+              }
+            ],
+            "order": {
+              "order_id": "be061_be06194ea83418d_origin",
+              "entitlement_type": "MEMBERSHIP",
+              "status": "PAID",
+              "version": 1,
+              "created_at": "2026-10-22T08:23:39.221Z",
+              "updated_at": "2026-10-22T08:23:39.455Z"
+            },
+            "entitlement": {
+              "entitlementType": "MEMBERSHIP",
+              "orderId": "be061_be06194ea83418d_origin",
+              "active": true,
+              "orderStatus": "PAID",
+              "granted": true,
+              "entitlements": [
+                {
+                  "order_id": "be061_be06194ea83418d_origin",
+                  "entitlement_type": "MEMBERSHIP",
+                  "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+                  "granted_at": "2026-10-22T08:23:58.368Z"
+                }
+              ]
+            },
+            "processingRecords": [
+              {
+                "attempt_id": "a52f33af-c59e-4291-baa3-3d5d4094241e",
+                "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+                "execution_id": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+                "order_id": "be061_be06194ea83418d_origin",
+                "entitlement_type": "MEMBERSHIP",
+                "origin": "ORIGINAL",
+                "result": "GRANTED",
+                "processed_at": "2026-10-22T08:23:58.368Z"
+              }
+            ],
+            "finishedAt": "2026-10-22T08:24:09.021371600Z"
+          }
+        }
+      ],
+      "verificationAttempts": [
+        {
+          "attemptId": "5a0ae921-147c-4c4f-b82a-01216d4a8e57",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:24:08.591298Z",
+          "leaseUntil": "2026-10-22T08:24:23.591105Z",
+          "observationId": "ca70135c-6f4c-4cfd-9217-6bb98db20efb"
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:23:41.167808Z",
+          "detail": {
+            "eligibilityHeld": true,
+            "planDigest": "927bbe0cd82833b284c2f6fee5c0b514024b65571945658b5bde4078985aa895",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1
+          }
+        },
+        {
+          "kind": "SEND_STARTED",
+          "recordedAt": "2026-10-22T08:23:51.105830Z",
+          "detail": {
+            "attemptId": "5a6389ef-a448-4e37-a043-5c5a60928cac",
+            "fence": 1
+          }
+        },
+        {
+          "kind": "DELIVERY_FINISHED",
+          "recordedAt": "2026-10-22T08:23:51.279829Z",
+          "detail": {
+            "outcome": "ACK",
+            "fence": 1
+          }
+        },
+        {
+          "kind": "VERIFICATION_STOPPED",
+          "recordedAt": "2026-10-22T08:24:09.048341Z",
+          "detail": {
+            "reason": "CONTRADICTORY_PROCESSING_FIELDS",
+            "observationId": "ca70135c-6f4c-4cfd-9217-6bb98db20efb",
+            "budgetExhausted": true
+          }
+        }
+      ],
+      "attempts": [
+        {
+          "attemptId": "5a6389ef-a448-4e37-a043-5c5a60928cac",
+          "fencingToken": 1,
+          "outcome": "ACK",
+          "startedAt": "2026-10-22T08:23:51.103052Z",
+          "finishedAt": "2026-10-22T08:23:51.278351Z"
+        }
+      ]
+    },
+    {
+      "id": "c89f27af-fc56-40e7-9014-e6df066ef9f8",
+      "planId": "225238df-388d-4541-9298-260dc7951a19",
+      "requesterId": "0e9f98d4-5ee1-4ece-a3d6-508e62ed9ab2",
+      "version": 2,
+      "digest": "802616e00c1e60274c7353671ae630fcdd6c8de9ec75cc894f73f8147d611220",
+      "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+      "businessKey": "a8e7df883ad158d619d0d0992728d7ebd3c502d715b252f9e14ea277a136887a",
+      "fingerprint": "51e605e834a497e7404e09e8b20f68d4153539e14adb5d9d615ef854a7271f45",
+      "transportFingerprint": "586b0b0267b5a4d382a86b5ee29607fda96455fdf3e316b3373942bbfe5be5c1",
+      "status": "SUCCEEDED",
+      "createdAt": "2026-10-22T08:24:10.218257Z",
+      "eligibilityHeld": false,
+      "businessVerified": true,
+      "action": "VERIFY_ONLY",
+      "actionCompleted": true,
+      "reason": "BUSINESS_CONFIRMED",
+      "deliveryState": null,
+      "incidentStatus": "RESOLVED",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:24:18.219513Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "CONFLICTING_EXECUTION": "NOT_APPLICABLE",
+        "ATOMIC_EXECUTION_ELIGIBILITY": "NOT_APPLICABLE"
+      },
+      "observations": [
+        {
+          "id": "eed47189-3a80-43ca-8296-b738e0e5f97d",
+          "verified": true,
+          "reason": "BUSINESS_CONFIRMED",
+          "observedAt": "2026-10-22T08:24:18.512165Z",
+          "contentSha256": "701d7b232b683c2a259bd0613c1eebebd2d6e99b465bda64aee73bc6bcf66e98",
+          "content": {
+            "startedAt": "2026-10-22T08:24:18.188392200Z",
+            "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+            "executionId": null,
+            "historyComplete": false,
+            "processingRecordLimit": 100,
+            "available": true,
+            "queries": [
+              {
+                "path": "/api/v1/orders/be061_be06194ea83418d_origin",
+                "startedAt": "2026-10-22T08:24:18.189385900Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:24:18.333939200Z"
+              },
+              {
+                "path": "/api/v1/orders/be061_be06194ea83418d_origin/entitlements/MEMBERSHIP",
+                "startedAt": "2026-10-22T08:24:18.333939200Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:24:18.427690400Z"
+              },
+              {
+                "path": "/api/v1/processing-records?eventId=2a2a81cb-f355-4518-a401-b257bfc1c16b",
+                "startedAt": "2026-10-22T08:24:18.428058200Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:24:18.500251500Z"
+              }
+            ],
+            "order": {
+              "order_id": "be061_be06194ea83418d_origin",
+              "entitlement_type": "MEMBERSHIP",
+              "status": "PAID",
+              "version": 1,
+              "created_at": "2026-10-22T08:23:39.221Z",
+              "updated_at": "2026-10-22T08:23:39.455Z"
+            },
+            "entitlement": {
+              "entitlementType": "MEMBERSHIP",
+              "orderId": "be061_be06194ea83418d_origin",
+              "active": true,
+              "orderStatus": "PAID",
+              "granted": true,
+              "entitlements": [
+                {
+                  "order_id": "be061_be06194ea83418d_origin",
+                  "entitlement_type": "MEMBERSHIP",
+                  "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+                  "granted_at": "2026-10-22T08:23:58.368Z"
+                }
+              ]
+            },
+            "processingRecords": [
+              {
+                "attempt_id": "a52f33af-c59e-4291-baa3-3d5d4094241e",
+                "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+                "execution_id": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+                "order_id": "be061_be06194ea83418d_origin",
+                "entitlement_type": "MEMBERSHIP",
+                "origin": "RECOVERY",
+                "result": "GRANTED",
+                "processed_at": "2026-10-22T08:23:58.368Z"
+              }
+            ],
+            "finishedAt": "2026-10-22T08:24:18.500251500Z"
+          }
+        }
+      ],
+      "verificationAttempts": [
+        {
+          "attemptId": "76bb7961-2b56-452f-b883-e3921d24c685",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:24:18.182957Z",
+          "leaseUntil": "2026-10-22T08:24:33.182771Z",
+          "observationId": "eed47189-3a80-43ca-8296-b738e0e5f97d"
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:24:10.220299Z",
+          "detail": {
+            "eligibilityHeld": false,
+            "planDigest": "802616e00c1e60274c7353671ae630fcdd6c8de9ec75cc894f73f8147d611220",
+            "action": "VERIFY_ONLY",
+            "planVersion": 2
+          }
+        },
+        {
+          "kind": "BUSINESS_CONFIRMED",
+          "recordedAt": "2026-10-22T08:24:18.523838Z",
+          "detail": {
+            "observationId": "eed47189-3a80-43ca-8296-b738e0e5f97d"
+          }
+        }
+      ],
+      "attempts": []
+    },
+    {
+      "id": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+      "planId": "52876d59-4c97-4fa6-81f0-a744d86d40b9",
+      "requesterId": "0e9f98d4-5ee1-4ece-a3d6-508e62ed9ab2",
+      "version": 1,
+      "digest": "927bbe0cd82833b284c2f6fee5c0b514024b65571945658b5bde4078985aa895",
+      "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+      "businessKey": "a8e7df883ad158d619d0d0992728d7ebd3c502d715b252f9e14ea277a136887a",
+      "fingerprint": "2feb13df61ea4a9195634438091e306c1b6fce02e46bf4c80a759aede86992cb",
+      "transportFingerprint": "586b0b0267b5a4d382a86b5ee29607fda96455fdf3e316b3373942bbfe5be5c1",
+      "status": "UNKNOWN",
+      "createdAt": "2026-10-22T08:23:41.164274Z",
+      "eligibilityHeld": true,
+      "businessVerified": false,
+      "action": "REPLAY_ORIGINAL",
+      "actionCompleted": true,
+      "reason": "CONTRADICTORY_PROCESSING_FIELDS",
+      "deliveryState": "DONE",
+      "incidentStatus": "RESOLVED",
+      "verificationCount": 1,
+      "verificationLimit": 3,
+      "nextCheckAt": null,
+      "verificationDeadline": "2026-10-22T08:23:49.166955Z",
+      "cancelRequestedAt": null,
+      "cancelledAt": null,
+      "releasedAt": null,
+      "checks": {
+        "CONFLICTING_EXECUTION": "PASS",
+        "ATOMIC_EXECUTION_ELIGIBILITY": "PASS"
+      },
+      "observations": [
+        {
+          "id": "ca70135c-6f4c-4cfd-9217-6bb98db20efb",
+          "verified": false,
+          "reason": "CONTRADICTORY_PROCESSING_FIELDS",
+          "observedAt": "2026-10-22T08:24:09.035506Z",
+          "contentSha256": "de3ec0008d01f30f6988ef9032b08bf584b01bee162bdb774dd62d6f08bac84f",
+          "content": {
+            "startedAt": "2026-10-22T08:24:08.597920800Z",
+            "eventId": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+            "executionId": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+            "historyComplete": false,
+            "processingRecordLimit": 100,
+            "available": true,
+            "queries": [
+              {
+                "path": "/api/v1/orders/be061_be06194ea83418d_origin",
+                "startedAt": "2026-10-22T08:24:08.598923400Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:24:08.780034600Z"
+              },
+              {
+                "path": "/api/v1/orders/be061_be06194ea83418d_origin/entitlements/MEMBERSHIP",
+                "startedAt": "2026-10-22T08:24:08.780034600Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:24:08.897950500Z"
+              },
+              {
+                "path": "/api/v1/processing-records?eventId=2a2a81cb-f355-4518-a401-b257bfc1c16b&executionId=5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+                "startedAt": "2026-10-22T08:24:08.897950500Z",
+                "outcome": "HTTP_200",
+                "finishedAt": "2026-10-22T08:24:09.020736700Z"
+              }
+            ],
+            "order": {
+              "order_id": "be061_be06194ea83418d_origin",
+              "entitlement_type": "MEMBERSHIP",
+              "status": "PAID",
+              "version": 1,
+              "created_at": "2026-10-22T08:23:39.221Z",
+              "updated_at": "2026-10-22T08:23:39.455Z"
+            },
+            "entitlement": {
+              "entitlementType": "MEMBERSHIP",
+              "orderId": "be061_be06194ea83418d_origin",
+              "active": true,
+              "orderStatus": "PAID",
+              "granted": true,
+              "entitlements": [
+                {
+                  "order_id": "be061_be06194ea83418d_origin",
+                  "entitlement_type": "MEMBERSHIP",
+                  "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+                  "granted_at": "2026-10-22T08:23:58.368Z"
+                }
+              ]
+            },
+            "processingRecords": [
+              {
+                "attempt_id": "a52f33af-c59e-4291-baa3-3d5d4094241e",
+                "event_id": "2a2a81cb-f355-4518-a401-b257bfc1c16b",
+                "execution_id": "5a1691fd-109a-4cc6-9006-d8cebb94e93b",
+                "order_id": "be061_be06194ea83418d_origin",
+                "entitlement_type": "MEMBERSHIP",
+                "origin": "ORIGINAL",
+                "result": "GRANTED",
+                "processed_at": "2026-10-22T08:23:58.368Z"
+              }
+            ],
+            "finishedAt": "2026-10-22T08:24:09.021371600Z"
+          }
+        }
+      ],
+      "verificationAttempts": [
+        {
+          "attemptId": "5a0ae921-147c-4c4f-b82a-01216d4a8e57",
+          "fencingToken": 1,
+          "claimedAt": "2026-10-22T08:24:08.591298Z",
+          "leaseUntil": "2026-10-22T08:24:23.591105Z",
+          "observationId": "ca70135c-6f4c-4cfd-9217-6bb98db20efb"
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "CREATED",
+          "recordedAt": "2026-10-22T08:23:41.167808Z",
+          "detail": {
+            "eligibilityHeld": true,
+            "planDigest": "927bbe0cd82833b284c2f6fee5c0b514024b65571945658b5bde4078985aa895",
+            "action": "REPLAY_ORIGINAL",
+            "planVersion": 1
+          }
+        },
+        {
+          "kind": "SEND_STARTED",
+          "recordedAt": "2026-10-22T08:23:51.105830Z",
+          "detail": {
+            "attemptId": "5a6389ef-a448-4e37-a043-5c5a60928cac",
+            "fence": 1
+          }
+        },
+        {
+          "kind": "DELIVERY_FINISHED",
+          "recordedAt": "2026-10-22T08:23:51.279829Z",
+          "detail": {
+            "outcome": "ACK",
+            "fence": 1
+          }
+        },
+        {
+          "kind": "VERIFICATION_STOPPED",
+          "recordedAt": "2026-10-22T08:24:09.048341Z",
+          "detail": {
+            "reason": "CONTRADICTORY_PROCESSING_FIELDS",
+            "observationId": "ca70135c-6f4c-4cfd-9217-6bb98db20efb",
+            "budgetExhausted": true
+          }
+        }
+      ],
+      "attempts": [
+        {
+          "attemptId": "5a6389ef-a448-4e37-a043-5c5a60928cac",
+          "fencingToken": 1,
+          "outcome": "ACK",
+          "startedAt": "2026-10-22T08:23:51.103052Z",
+          "finishedAt": "2026-10-22T08:23:51.278351Z"
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": "EXECUTION_TERMINAL",
+      "message": "执行动作已经结束",
+      "traceId": "7f55db34-3005-4afc-96b5-47fc7c7eb992"
+    },
+    {
+      "code": "EXECUTION_TERMINAL",
+      "message": "执行动作已经结束",
+      "traceId": "c88d734b-415c-4a6c-b5be-f8531b660945"
+    },
+    {
+      "code": "FORBIDDEN",
+      "message": "无权执行此操作",
+      "traceId": "f7983f46-fab9-4392-875e-6fee34d943d1"
+    },
+    {
+      "code": "FORBIDDEN",
+      "message": "无权执行此操作",
+      "traceId": "b32a2f33-e1c9-4cc9-8311-4a99cc3d8bc9"
+    },
+    {
+      "code": "CSRF_REJECTED",
+      "message": "请求校验失败",
+      "traceId": "eb87af8d-4734-4789-9900-d35a4369022c"
+    },
+    {
+      "code": "EXECUTION_TERMINAL",
+      "message": "执行动作已经结束",
+      "traceId": "b746f949-6c6f-4def-a2cc-26ea2ddf5d1e"
+    },
+    {
+      "code": "EXECUTION_TERMINAL",
+      "message": "执行动作已经结束",
+      "traceId": "cc573055-f8f7-4aad-9ae8-1da5d5c6a006"
+    },
+    {
+      "code": "CONFLICTING_EXECUTION",
+      "message": "此业务资源已有保留执行资格",
+      "traceId": "00e6c524-f3ba-48b0-87b9-3929e7bff46f"
+    },
+    {
+      "code": "CONFLICT",
+      "message": "计划已失效，请创建新版本",
+      "traceId": "d023dafb-0d9e-4320-8fb7-1f6302d7d5f5"
+    },
+    {
+      "code": "EXECUTION_TERMINAL",
+      "message": "执行动作已经结束",
+      "traceId": "b98a0bbf-d5e4-4a2e-81cb-0db71f33c985"
+    },
+    {
+      "code": "FORBIDDEN",
+      "message": "无权执行此操作",
+      "traceId": "dc207458-8210-4fb8-8097-d70b3abcee61"
+    },
+    {
+      "code": "FORBIDDEN",
+      "message": "无权执行此操作",
+      "traceId": "251cbc50-9155-4d37-8c7a-99939860d513"
+    },
+    {
+      "code": "CSRF_REJECTED",
+      "message": "请求校验失败",
+      "traceId": "c99fe468-240b-4093-8405-e9b2abaebafa"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "cc6c5735-a893-47f7-89da-95c240e9af57",
+      "source": "membership-demo",
+      "event_id": "eae84375-491a-44f1-95ba-aefb2b4046b7",
+      "handler_id": "membership.activate",
+      "status": "OPEN",
+      "created_at": "2026-10-22T08:12:31.974Z",
+      "resolved_at": null,
+      "resolved_execution_id": null,
+      "resolution_observation_id": null,
+      "original_event": "{\"eventId\":\"eae84375-491a-44f1-95ba-aefb2b4046b7\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:12:31.6519202+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be06103f5685cc2_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"}",
+      "event_sha256": "254b06d54799614fa32855befbd552a977b5c5399e7419cb9d1669869faeb625",
+      "observations": [
+        {
+          "id": "45c07b2a-fcaa-4cc4-ae5f-4a194ecc8054",
+          "report_id": "6699171b-50cf-4d4f-8750-346c4d8eeb0d",
+          "observation_id": "808c271f-db80-4369-a48f-3f2de8f4d804",
+          "kind": "REPORT",
+          "body": "{\"bodySha256\":\"435629003bdab56ca8e5f3dc6cdb2d35e178e96ebf04fd632ac0c505b25b135d\",\"deadLetter\":{\"observationId\":\"808c271f-db80-4369-a48f-3f2de8f4d804\",\"queue\":\"ordivane.test.be060.be06103f5685cc2.membership.failed\",\"reportId\":\"6699171b-50cf-4d4f-8750-346c4d8eeb0d\"},\"errorCode\":\"INVALID_MESSAGE\",\"errorSummary\":\"消息格式或恢复头无效\",\"eventId\":\"eae84375-491a-44f1-95ba-aefb2b4046b7\",\"executionId\":null,\"handlerId\":\"membership.activate\",\"observationId\":\"808c271f-db80-4369-a48f-3f2de8f4d804\",\"observedAt\":\"2026-10-22T08:12:31.886429+00:00\",\"origin\":\"ORIGINAL\",\"originalEvent\":{\"eventId\":\"eae84375-491a-44f1-95ba-aefb2b4046b7\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:12:31.6519202+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be06103f5685cc2_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"},\"reportId\":\"6699171b-50cf-4d4f-8750-346c4d8eeb0d\",\"schemaVersion\":1,\"source\":\"membership-demo\"}",
+          "body_sha256": "435629003bdab56ca8e5f3dc6cdb2d35e178e96ebf04fd632ac0c505b25b135d",
+          "event_conflict": false,
+          "received_at": "2026-10-22T08:12:31.975Z"
+        }
+      ]
+    },
+    {
+      "id": "691c7cfb-f20d-4d94-956a-500debb1476d",
+      "source": "membership-demo",
+      "event_id": "685f9662-3538-47da-ba11-faca958047bc",
+      "handler_id": "membership.activate",
+      "status": "OPEN",
+      "created_at": "2026-10-22T08:09:28.082Z",
+      "resolved_at": null,
+      "resolved_execution_id": null,
+      "resolution_observation_id": null,
+      "original_event": "{\"eventId\":\"685f9662-3538-47da-ba11-faca958047bc\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:09:27.6640214+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0612c16ceda84_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"}",
+      "event_sha256": "c278a90cbebe08310327275f631e21d98549fd5b02c984dc03893c7334bbcd8c",
+      "observations": [
+        {
+          "id": "649ca3ae-764d-459e-9f74-4033f1915c3f",
+          "report_id": "b04bdbaf-79ff-4b0f-ab0a-d540672b6a52",
+          "observation_id": "ce47c0d6-5642-4389-b6c5-8f39db0eeb3e",
+          "kind": "REPORT",
+          "body": "{\"bodySha256\":\"d52142086fca6c34cb1943cf61f1746a2a7c1b6091325d0fc6dd89022011b907\",\"deadLetter\":{\"observationId\":\"ce47c0d6-5642-4389-b6c5-8f39db0eeb3e\",\"queue\":\"ordivane.test.be060.be0612c16ceda84.membership.failed\",\"reportId\":\"b04bdbaf-79ff-4b0f-ab0a-d540672b6a52\"},\"errorCode\":\"INVALID_MESSAGE\",\"errorSummary\":\"消息格式或恢复头无效\",\"eventId\":\"685f9662-3538-47da-ba11-faca958047bc\",\"executionId\":null,\"handlerId\":\"membership.activate\",\"observationId\":\"ce47c0d6-5642-4389-b6c5-8f39db0eeb3e\",\"observedAt\":\"2026-10-22T08:09:27.993509+00:00\",\"origin\":\"ORIGINAL\",\"originalEvent\":{\"eventId\":\"685f9662-3538-47da-ba11-faca958047bc\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:09:27.6640214+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0612c16ceda84_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"},\"reportId\":\"b04bdbaf-79ff-4b0f-ab0a-d540672b6a52\",\"schemaVersion\":1,\"source\":\"membership-demo\"}",
+          "body_sha256": "d52142086fca6c34cb1943cf61f1746a2a7c1b6091325d0fc6dd89022011b907",
+          "event_conflict": false,
+          "received_at": "2026-10-22T08:09:28.084Z"
+        }
+      ]
+    },
+    {
+      "id": "5a5b9d6e-b785-444b-9e42-a642f40006b9",
+      "source": "membership-demo",
+      "event_id": "f3c3507e-befb-474e-a266-6a5ea8c10f87",
+      "handler_id": "membership.activate",
+      "status": "OPEN",
+      "created_at": "2026-10-22T08:07:02.318Z",
+      "resolved_at": null,
+      "resolved_execution_id": null,
+      "resolution_observation_id": null,
+      "original_event": "{\"eventId\":\"f3c3507e-befb-474e-a266-6a5ea8c10f87\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:07:01.9914537+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0612dfbee9fc8_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"}",
+      "event_sha256": "9351f282cbecf6b47b2c5014c3c1330f969b65628205b86cff8f9fad2bad4df7",
+      "observations": [
+        {
+          "id": "ae95c8aa-ddfb-4364-b2fa-ba607af436c0",
+          "report_id": "c3e01710-9659-4828-bd64-8e3d70699cdd",
+          "observation_id": "d101c34a-aa08-49d1-9908-8e6a1218addf",
+          "kind": "REPORT",
+          "body": "{\"bodySha256\":\"2f135703f0b62ef778ff4d8f5226931c243ca2cdc4f2d342088ee15b30dff079\",\"deadLetter\":{\"observationId\":\"d101c34a-aa08-49d1-9908-8e6a1218addf\",\"queue\":\"ordivane.test.be060.be0612dfbee9fc8.membership.failed\",\"reportId\":\"c3e01710-9659-4828-bd64-8e3d70699cdd\"},\"errorCode\":\"INVALID_MESSAGE\",\"errorSummary\":\"消息格式或恢复头无效\",\"eventId\":\"f3c3507e-befb-474e-a266-6a5ea8c10f87\",\"executionId\":null,\"handlerId\":\"membership.activate\",\"observationId\":\"d101c34a-aa08-49d1-9908-8e6a1218addf\",\"observedAt\":\"2026-10-22T08:07:02.231870+00:00\",\"origin\":\"ORIGINAL\",\"originalEvent\":{\"eventId\":\"f3c3507e-befb-474e-a266-6a5ea8c10f87\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:07:01.9914537+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0612dfbee9fc8_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"},\"reportId\":\"c3e01710-9659-4828-bd64-8e3d70699cdd\",\"schemaVersion\":1,\"source\":\"membership-demo\"}",
+          "body_sha256": "2f135703f0b62ef778ff4d8f5226931c243ca2cdc4f2d342088ee15b30dff079",
+          "event_conflict": false,
+          "received_at": "2026-10-22T08:07:02.320Z"
+        }
+      ]
+    },
+    {
+      "id": "b96559a7-979d-4ff3-8d2b-6a5dbe2c8637",
+      "source": "membership-demo",
+      "event_id": "14b4670e-1025-4418-8f95-86a35b85261b",
+      "handler_id": "membership.activate",
+      "status": "OPEN",
+      "created_at": "2026-10-22T08:14:22.620Z",
+      "resolved_at": null,
+      "resolved_execution_id": null,
+      "resolution_observation_id": null,
+      "original_event": "{\"eventId\":\"14b4670e-1025-4418-8f95-86a35b85261b\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:14:22.2784452+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0613b51ef51a9_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"}",
+      "event_sha256": "33d158aff300a463015b5c5dfeddd463e673ea7c770a728b589511907eea99ea",
+      "observations": [
+        {
+          "id": "f9b54d5f-889f-422a-bb94-dfd62dd8153a",
+          "report_id": "fd3ace10-b7f0-4a55-a753-915d0036779b",
+          "observation_id": "addf9b51-9aa2-4826-a53e-8cb0cd093819",
+          "kind": "REPORT",
+          "body": "{\"bodySha256\":\"2b10ede30e368543cccae844b7ba91d7c963d699ac8419b59d26875622b472a4\",\"deadLetter\":{\"observationId\":\"addf9b51-9aa2-4826-a53e-8cb0cd093819\",\"queue\":\"ordivane.test.be060.be0613b51ef51a9.membership.failed\",\"reportId\":\"fd3ace10-b7f0-4a55-a753-915d0036779b\"},\"errorCode\":\"INVALID_MESSAGE\",\"errorSummary\":\"消息格式或恢复头无效\",\"eventId\":\"14b4670e-1025-4418-8f95-86a35b85261b\",\"executionId\":null,\"handlerId\":\"membership.activate\",\"observationId\":\"addf9b51-9aa2-4826-a53e-8cb0cd093819\",\"observedAt\":\"2026-10-22T08:14:22.548545+00:00\",\"origin\":\"ORIGINAL\",\"originalEvent\":{\"eventId\":\"14b4670e-1025-4418-8f95-86a35b85261b\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:14:22.2784452+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0613b51ef51a9_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"},\"reportId\":\"fd3ace10-b7f0-4a55-a753-915d0036779b\",\"schemaVersion\":1,\"source\":\"membership-demo\"}",
+          "body_sha256": "2b10ede30e368543cccae844b7ba91d7c963d699ac8419b59d26875622b472a4",
+          "event_conflict": false,
+          "received_at": "2026-10-22T08:14:22.621Z"
+        }
+      ]
+    },
+    {
+      "id": "0e936b6a-a764-466e-aff3-9cda44a792c9",
+      "source": "membership-demo",
+      "event_id": "c73de416-1ba6-4438-8f64-b889152d8cfa",
+      "handler_id": "membership.activate",
+      "status": "RESOLVED",
+      "created_at": "2026-10-22T08:14:15.899Z",
+      "resolved_at": "2026-10-22T08:15:09.759Z",
+      "resolved_execution_id": "096e101f-9739-4565-b84a-e5c00b9ed199",
+      "resolution_observation_id": "1424a135-6cec-4d8c-99ce-b714b420369c",
+      "original_event": "{\"eventId\":\"c73de416-1ba6-4438-8f64-b889152d8cfa\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:14:15.5264809+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0613b51ef51a9_lost\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"}",
+      "event_sha256": "e846c1325b9cc49703b3ec0e37d0a1d591cc86902ae8b579331668870bb1c56b",
+      "observations": [
+        {
+          "id": "d1b2f1b9-4471-488c-9367-5c47c5de01ab",
+          "report_id": "2d650854-bb97-40de-a1f1-548e23401897",
+          "observation_id": "e4d413ed-538a-46d7-b5be-dee7a0168efb",
+          "kind": "REPORT",
+          "body": "{\"bodySha256\":\"3a3720bfeeaa2cc541c718ec8254b415b52b938210c24cdc88dce39222347619\",\"deadLetter\":{\"observationId\":\"e4d413ed-538a-46d7-b5be-dee7a0168efb\",\"queue\":\"ordivane.test.be060.be0613b51ef51a9.membership.failed\",\"reportId\":\"2d650854-bb97-40de-a1f1-548e23401897\"},\"errorCode\":\"INVALID_MESSAGE\",\"errorSummary\":\"消息格式或恢复头无效\",\"eventId\":\"c73de416-1ba6-4438-8f64-b889152d8cfa\",\"executionId\":null,\"handlerId\":\"membership.activate\",\"observationId\":\"e4d413ed-538a-46d7-b5be-dee7a0168efb\",\"observedAt\":\"2026-10-22T08:14:15.788024+00:00\",\"origin\":\"ORIGINAL\",\"originalEvent\":{\"eventId\":\"c73de416-1ba6-4438-8f64-b889152d8cfa\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:14:15.5264809+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0613b51ef51a9_lost\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"},\"reportId\":\"2d650854-bb97-40de-a1f1-548e23401897\",\"schemaVersion\":1,\"source\":\"membership-demo\"}",
+          "body_sha256": "3a3720bfeeaa2cc541c718ec8254b415b52b938210c24cdc88dce39222347619",
+          "event_conflict": false,
+          "received_at": "2026-10-22T08:14:15.904Z"
+        }
+      ]
+    },
+    {
+      "id": "bbc8bd9c-9c46-4a43-a8db-4130bbad8123",
+      "source": "membership-demo",
+      "event_id": "d8e4ded0-c7af-4a9c-beac-b8ac1898ab46",
+      "handler_id": "membership.activate",
+      "status": "OPEN",
+      "created_at": "2026-10-22T08:14:17.297Z",
+      "resolved_at": null,
+      "resolved_execution_id": null,
+      "resolution_observation_id": null,
+      "original_event": "{\"eventId\":\"d8e4ded0-c7af-4a9c-beac-b8ac1898ab46\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:14:16.9540124+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0613b51ef51a9_refund\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"}",
+      "event_sha256": "e9726783b82f8d8756f256a44013933d9f3905c033f81a90427251684fbda878",
+      "observations": [
+        {
+          "id": "74f66c29-580b-4a43-aca0-fc8906e86a5a",
+          "report_id": "a9b831b6-f961-4511-b3a7-1a7384f3ab2b",
+          "observation_id": "30e1dc5e-bb4d-49d4-a732-249d09a1e654",
+          "kind": "REPORT",
+          "body": "{\"bodySha256\":\"11c7361651e495b82f190b4644a4ebf5b85954ec92c373e33cf9c0833f437dd7\",\"deadLetter\":{\"observationId\":\"30e1dc5e-bb4d-49d4-a732-249d09a1e654\",\"queue\":\"ordivane.test.be060.be0613b51ef51a9.membership.failed\",\"reportId\":\"a9b831b6-f961-4511-b3a7-1a7384f3ab2b\"},\"errorCode\":\"INVALID_MESSAGE\",\"errorSummary\":\"消息格式或恢复头无效\",\"eventId\":\"d8e4ded0-c7af-4a9c-beac-b8ac1898ab46\",\"executionId\":null,\"handlerId\":\"membership.activate\",\"observationId\":\"30e1dc5e-bb4d-49d4-a732-249d09a1e654\",\"observedAt\":\"2026-10-22T08:14:17.208740+00:00\",\"origin\":\"ORIGINAL\",\"originalEvent\":{\"eventId\":\"d8e4ded0-c7af-4a9c-beac-b8ac1898ab46\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:14:16.9540124+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0613b51ef51a9_refund\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"},\"reportId\":\"a9b831b6-f961-4511-b3a7-1a7384f3ab2b\",\"schemaVersion\":1,\"source\":\"membership-demo\"}",
+          "body_sha256": "11c7361651e495b82f190b4644a4ebf5b85954ec92c373e33cf9c0833f437dd7",
+          "event_conflict": false,
+          "received_at": "2026-10-22T08:14:17.298Z"
+        }
+      ]
+    },
+    {
+      "id": "6750092f-5fe4-457d-a96f-f0561604bf3c",
+      "source": "membership-demo",
+      "event_id": "5bbcc21e-d619-4056-9c6f-c9885d1e0810",
+      "handler_id": "membership.activate",
+      "status": "OPEN",
+      "created_at": "2026-10-22T08:17:26.386Z",
+      "resolved_at": null,
+      "resolved_execution_id": null,
+      "resolution_observation_id": null,
+      "original_event": "{\"eventId\":\"5bbcc21e-d619-4056-9c6f-c9885d1e0810\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:17:26.0579185+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0614dfefc3665_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"}",
+      "event_sha256": "ddaa0a8ae050843bdaac25685cf9b997c54ede9a9349e445af2049bf2b7c9bc1",
+      "observations": [
+        {
+          "id": "177ae76b-36d9-4e30-8a26-99d7d609604e",
+          "report_id": "dad8b244-20db-4bb5-821b-646003d76996",
+          "observation_id": "8ca45107-d5a3-4cf0-8308-5656d110fd29",
+          "kind": "REPORT",
+          "body": "{\"bodySha256\":\"0a44e5c95ef29fc548a1b6512745ec02a32786feee82ef7854800d51da99ee2c\",\"deadLetter\":{\"observationId\":\"8ca45107-d5a3-4cf0-8308-5656d110fd29\",\"queue\":\"ordivane.test.be060.be0614dfefc3665.membership.failed\",\"reportId\":\"dad8b244-20db-4bb5-821b-646003d76996\"},\"errorCode\":\"INVALID_MESSAGE\",\"errorSummary\":\"消息格式或恢复头无效\",\"eventId\":\"5bbcc21e-d619-4056-9c6f-c9885d1e0810\",\"executionId\":null,\"handlerId\":\"membership.activate\",\"observationId\":\"8ca45107-d5a3-4cf0-8308-5656d110fd29\",\"observedAt\":\"2026-10-22T08:17:26.298964+00:00\",\"origin\":\"ORIGINAL\",\"originalEvent\":{\"eventId\":\"5bbcc21e-d619-4056-9c6f-c9885d1e0810\",\"eventType\":\"OrderPaid\",\"occurredAt\":\"2026-10-22T16:17:26.0579185+08:00\",\"payload\":{\"entitlementType\":\"MEMBERSHIP\",\"orderId\":\"be061_be0614dfefc3665_manual\"},\"schemaVersion\":1,\"source\":\"ordivane-demo\"},\"reportId\":\"dad8b244-20db-4bb5-821b-646003d76996\",\"schemaVersion\":1,\"source\":\"membership-demo\"}",
+          "body_sha256": "0a44e5c95ef29fc548a1b6512745ec02a32786feee82ef7854800d51da99ee2c",
+          "event_conflict": false,
+          "received_at": "2026-10-22T08:17:26.387Z"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "8be7f2e28b480508849ffe21bf08adc79dfc0809a6a7e3d236b42c533aec0650": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "dbbdc2a2facbe579349ca5fe56854875855df2d97dc881a03d6581ffaa01971d": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "2e168f787a57d4af1578e144de8c70ee3555f055b4ed0a39667711c543455fc3": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "9c0d688fbfb2c7269f66a0b13ddd4af53917a4c0c226250fcbdcb632e9acd27b": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "4d9a0118ecd29bde2e6e079c32656dad9aeab3ceff419187ddf0caac116b1764": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "de52cbce1d19d2d23b6a9794fdf5275b5a7d90eee96b9fab8e50bdfce1d3727f": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "d3dba772de8aec7be174cbe6a9fb188cc7ea1ed72a6ec236fd26635d8e98209c": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "b50a818c3631339bc59c17a59faf3f203fb62e7cfbe7f58439cf321be9eb8c30": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "3bdd3b4b842a43089a0ce38f6da0c93d3603ee202b784cfec6dffa22da67ff14": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "eb39778f6bbc6a86528b048006356a059b1e6dba2f7037aed1476684ce860fe4": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "b55a84394ab3ac2ba6ee193ac90ed198906daab85b1f4b5dd330cc341ab3e16c": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "f7e61d474f66965d889f9d1a252eb182a65d0e8fa3e78f6acd29c5b65700c0cf": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "f6bfa74bb22ab4d5ea9c2d10ddbe19acf0f635b7d63e79a49b1c0a00ece35c40": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "1be5f0702a54c21dbd14f8ce6610c01c22ac4b8c6227c5675595378e50477c72": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "f9d8a3cc66da83723718a64209432d0e564a7ec81b31f587e2779b1baafde720": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "7fdea4fb9612ff606768cf18626bcb9048c97382d1ade72d2bd081d004e4bf5b": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "75f2f5ea11efe28278f0a6190850748c69397114151a866172a5d1a7a57ec328": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "30316cee4f78e4c79417f85a8a13d1bb22641a85f83a52feba4ccc32a5378374": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "624d8aa48f63d99430eead151278009377469e08a008dc83c8b6d5238c2e97d5": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "393e8f4a616d2f302c0879a1b1a1e022d29185b89a8cab4aeb7fab67ecb158fc": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "f83a326e1b5b52b0cd97dd68c907f278d2b90dcafd26fce2d2ccf2109b9e3860": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "dafeb0d8d9ab9c2e61083b24f87661f9d477847d54afbcfd47680768f713b42e": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "1d6610894406d7625a8b5fbf51b1db043eb1259cda074aaddf2370906098da40": {
+      "run": "run-be0614dfefc3665",
+      "result": "PASS",
+      "resultsSha256": "98229abaf7e4860b83350c8e6b3cb9755ab0a50749ca1e170f8316d5f1b538d3"
+    },
+    "b69e716c28c67cd5068807d141bf5c3abdd7b6e3cd5bcc131fb032b7c441b9df": {
+      "run": "run-be06194ea83418d",
+      "result": "PASS",
+      "resultsSha256": "1a2642bd93fe5fa3c1f6afdca74c48f2baf183682328de1af3ade80a3d37732c"
+    },
+    "398a6dfb54919e1dc836dcbc20256dff34f91beed7ad04add9684536315f7df9": {
+      "run": "run-be06194ea83418d",
+      "result": "PASS",
+      "resultsSha256": "1a2642bd93fe5fa3c1f6afdca74c48f2baf183682328de1af3ade80a3d37732c"
+    },
+    "f71eb1fc2bdeae6192852b00a77381799c5132d4e7a29eb217f9dd534a64b352": {
+      "run": "run-be06194ea83418d",
+      "result": "PASS",
+      "resultsSha256": "1a2642bd93fe5fa3c1f6afdca74c48f2baf183682328de1af3ade80a3d37732c"
+    },
+    "f1501f8e7550c4b7141bb0c6977b59e08c0f7f65733db7c211a56dd30c168ae5": {
+      "run": "run-be06194ea83418d",
+      "result": "PASS",
+      "resultsSha256": "1a2642bd93fe5fa3c1f6afdca74c48f2baf183682328de1af3ade80a3d37732c"
+    },
+    "e9d99fceb8dec98b47fec071c8e2af5a55c6d1f43f41ab735e5326a209ec73ef": {
+      "run": "run-be06194ea83418d",
+      "result": "PASS",
+      "resultsSha256": "1a2642bd93fe5fa3c1f6afdca74c48f2baf183682328de1af3ade80a3d37732c"
+    },
+    "bdd3aae99abcba8be76a545b8229b594b6fed3d4965e68c2739fcb9bfba04cde": {
+      "run": "run-be06194ea83418d",
+      "result": "PASS",
+      "resultsSha256": "1a2642bd93fe5fa3c1f6afdca74c48f2baf183682328de1af3ade80a3d37732c"
+    },
+    "203871dd5f6dd6885e856e75eb5381f9a96ed3bc9e75d572c891d0f852b251ef": {
+      "run": "run-be06194ea83418d",
+      "result": "PASS",
+      "resultsSha256": "1a2642bd93fe5fa3c1f6afdca74c48f2baf183682328de1af3ade80a3d37732c"
+    }
+  }
+}

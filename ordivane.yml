@@ -1,0 +1,45 @@
+# 启动加载样例；环境变量由进程显式注入，能力声明不授予执行权。
+schema_version: 1
+project:
+  name: Ordivane
+  display_name: 缀衡
+scenario_directory: scenarios
+connections:
+  rabbitmq:
+    uri: ${ORDIVANE_RABBITMQ_URI}
+    dead_letter_queue: ordivane.demo.membership.failed
+    source_id: membership-demo
+  membership:
+    base_url: http://localhost:8081
+    api_token: ${ORDIVANE_DEMO_API_TOKEN}
+model:
+  enabled: false
+  base_url: ${ORDIVANE_MODEL_BASE_URL}
+  model_name: ${ORDIVANE_MODEL_NAME}
+  api_key: ${ORDIVANE_MODEL_API_KEY}
+  request_timeout_seconds: 20
+registry:
+  tools:
+    - event-details
+    - processing-history
+    - order-status
+    - entitlement-status
+    - runbook-search
+  checks:
+    - event-schema-valid
+    - order-paid-not-refunded
+    - entitlement-absent
+    - no-conflicting-execution
+  replay_targets:
+    - id: membership-replay
+      exchange: ordivane.demo.recovery
+      routing_key: membership.activate
+      queue: ordivane.demo.membership.recovery
+  verifiers:
+    - membership-activated
+safety:
+  replay_approval_required: true
+  forbid_self_approval: true
+  preserve_original_payload: true
+  recheck_before_execution: true
+

@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: ordivane-demo
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  datasource:
+    url: jdbc:postgresql://${ORDIVANE_PG_HOST:127.0.0.1}:${ORDIVANE_PG_PORT:5432}/ordivane_demo
+    username: ordivane_demo
+    password: ${ORDIVANE_DEMO_DB_PASSWORD}
+  flyway:
+    locations: classpath:db/migration
+    fail-on-missing-locations: false
+  rabbitmq:
+    addresses: ${ORDIVANE_RABBITMQ_URI}
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true
+    listener:
+      simple:
+        default-requeue-rejected: false
+        prefetch: 10
+server:
+  port: 8081
+  address: 127.0.0.1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+
+

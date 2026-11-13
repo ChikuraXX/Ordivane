@@ -1,0 +1,760 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "演示订单与会员API",
+    "version": "1.0.0",
+    "description": "BE-010实施契约；所有业务操作需要Bearer服务凭据，平台经HTTP查询，不直连演示库。"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8081"
+    }
+  ],
+  "security": [
+    {
+      "demoServiceToken": []
+    }
+  ],
+  "paths": {
+    "/api/v1/orders": {
+      "post": {
+        "operationId": "createOrder",
+        "summary": "幂等创建模拟订单",
+        "responses": {
+          "200": {
+            "description": "已完成本次操作；支付仅持久化待发事件，必须回查业务结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "字段或格式无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "服务凭据缺失或无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "订单不存在",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "订单状态或业务目标冲突",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "操作失败，不代表成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrder"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/orders/{orderId}": {
+      "get": {
+        "operationId": "getOrder",
+        "summary": "查询权威订单状态",
+        "responses": {
+          "200": {
+            "description": "已完成本次操作；支付仅持久化待发事件，必须回查业务结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "字段或格式无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "服务凭据缺失或无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "订单不存在",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "订单状态或业务目标冲突",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "操作失败，不代表成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/orders/{orderId}/payments": {
+      "post": {
+        "operationId": "payOrder",
+        "summary": "支付与Outbox同事务提交；重复返回原事件",
+        "responses": {
+          "200": {
+            "description": "已完成本次操作；支付仅持久化待发事件，必须回查业务结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Payment"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "字段或格式无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "服务凭据缺失或无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "订单不存在",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "订单状态或业务目标冲突",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "操作失败，不代表成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/orders/{orderId}/refunds": {
+      "post": {
+        "operationId": "refundOrder",
+        "summary": "退款；不处理资金，保留历史权益",
+        "responses": {
+          "200": {
+            "description": "已完成本次操作；支付仅持久化待发事件，必须回查业务结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "字段或格式无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "服务凭据缺失或无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "订单不存在",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "订单状态或业务目标冲突",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "操作失败，不代表成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/orders/{orderId}/entitlements/{entitlementType}": {
+      "get": {
+        "operationId": "getEntitlement",
+        "summary": "查询历史权益及当前有效状态",
+        "responses": {
+          "200": {
+            "description": "已完成本次操作；支付仅持久化待发事件，必须回查业务结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntitlementStatus"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "字段或格式无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "服务凭据缺失或无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "订单不存在",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "订单状态或业务目标冲突",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "操作失败，不代表成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            }
+          },
+          {
+            "name": "entitlementType",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "const": "MEMBERSHIP"
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/processing-records": {
+      "get": {
+        "operationId": "getProcessingRecords",
+        "summary": "按事件及可选恢复执行查最近100次处理",
+        "responses": {
+          "200": {
+            "description": "已完成本次操作；支付仅持久化待发事件，必须回查业务结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "maxItems": 100,
+                  "items": {
+                    "$ref": "#/components/schemas/ProcessingRecord"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "字段或格式无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "服务凭据缺失或无效",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "订单不存在",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "订单状态或业务目标冲突",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "操作失败，不代表成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "executionId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "demoServiceToken": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "ORDIVANE_DEMO_API_TOKEN；缺失时拒绝业务访问，不等同于平台人类会话或审批"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "code",
+          "message",
+          "traceId"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "traceId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateOrder": {
+        "type": "object",
+        "required": [
+          "orderId",
+          "entitlementType"
+        ],
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$"
+          },
+          "entitlementType": {
+            "const": "MEMBERSHIP"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Order": {
+        "type": "object",
+        "required": [
+          "order_id",
+          "entitlement_type",
+          "status",
+          "version",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "entitlement_type": {
+            "const": "MEMBERSHIP"
+          },
+          "status": {
+            "enum": [
+              "CREATED",
+              "PAID",
+              "REFUNDED"
+            ]
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Payment": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "order_id",
+          "created_at",
+          "published_at"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "published_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "Entitlement": {
+        "type": "object",
+        "required": [
+          "order_id",
+          "entitlement_type",
+          "event_id",
+          "granted_at"
+        ],
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "entitlement_type": {
+            "const": "MEMBERSHIP"
+          },
+          "event_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "granted_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EntitlementStatus": {
+        "type": "object",
+        "required": [
+          "orderId",
+          "entitlementType",
+          "orderStatus",
+          "granted",
+          "active",
+          "entitlements"
+        ],
+        "properties": {
+          "orderId": {
+            "type": "string"
+          },
+          "entitlementType": {
+            "const": "MEMBERSHIP"
+          },
+          "orderStatus": {
+            "enum": [
+              "CREATED",
+              "PAID",
+              "REFUNDED"
+            ]
+          },
+          "granted": {
+            "type": "boolean"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "entitlements": {
+            "type": "array",
+            "maxItems": 1,
+            "items": {
+              "$ref": "#/components/schemas/Entitlement"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProcessingRecord": {
+        "type": "object",
+        "required": [
+          "attempt_id",
+          "event_id",
+          "execution_id",
+          "order_id",
+          "entitlement_type",
+          "origin",
+          "result",
+          "processed_at"
+        ],
+        "properties": {
+          "attempt_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "event_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "execution_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "order_id": {
+            "type": "string"
+          },
+          "entitlement_type": {
+            "const": "MEMBERSHIP"
+          },
+          "origin": {
+            "enum": [
+              "ORIGINAL",
+              "RECOVERY"
+            ]
+          },
+          "result": {
+            "enum": [
+              "GRANTED",
+              "ALREADY_GRANTED",
+              "REFUND_REJECTED"
+            ]
+          },
+          "processed_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

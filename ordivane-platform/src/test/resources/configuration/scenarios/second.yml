@@ -1,0 +1,57 @@
+# ID 与能力引用是契约示例，需要对应 Java 适配器实现。
+schema_version: 1
+scenario:
+  id: synthetic-second
+  name: 会员开通异常
+  match:
+    source: membership-demo
+    event_type: SyntheticPaidB
+    schema_version: 1
+    handler: membership.activate
+  evidence_tools:
+    - event-details
+    - processing-history
+    - order-status
+    - entitlement-status
+    - runbook-search
+  diagnosis:
+    prompt: prompts/membership-diagnosis.md
+    runbooks:
+      - runbooks/membership-activation.md
+    tools:
+      - event-details
+      - processing-history
+      - order-status
+      - entitlement-status
+      - runbook-search
+    max_tool_calls: 5
+    max_model_requests: 3
+    timeout_seconds: 60
+  recovery:
+    allowed_actions:
+      - REPLAY_ORIGINAL
+      - VERIFY_ONLY
+      - WAIT_AND_RECHECK
+      - MANUAL_INTERVENTION
+    replay_target: membership-replay
+    replay_prechecks:
+      - event-schema-valid
+      - order-paid-not-refunded
+      - entitlement-absent
+      - no-conflicting-execution
+    plan_ttl_seconds: 1800
+    approval:
+      required_for:
+        - REPLAY_ORIGINAL
+        - VERIFY_ONLY
+        - WAIT_AND_RECHECK
+        - MANUAL_INTERVENTION
+      roles:
+        - APPROVER
+      forbid_self_approval: true
+  verification:
+    verifier: membership-activated
+    interval_seconds: 5
+    timeout_seconds: 60
+
+
