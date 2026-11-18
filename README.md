@@ -42,8 +42,8 @@ docker compose --env-file .env -f deploy/compose.yml up -d --wait
 
 ## 许可证
 
-Ordivane 原创内容采用双许可，使用者可任选 [GNU GPL v3.0](LICENSES/GPL-3.0-only.txt) 或 [GNU LGPL v3.0](LICENSES/LGPL-3.0-only.txt)。
+Ordivane 原创内容采用 [GNU LGPL v3.0](LICENSE)，SPDX 标识为 `LGPL-3.0-only`。
 
-SPDX 表达式：`GPL-3.0-only OR LGPL-3.0-only`。
+LGPL v3.0 引用的 [GNU GPL v3.0 基础条款](legal/gpl-3.0.txt) 随仓库提供。
 
 第三方组件（包括 Maven Wrapper）沿用各自的许可证和版权声明。
