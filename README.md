@@ -20,7 +20,7 @@ Ordivane 是一个面向 Java 业务系统的事件异常诊断与受控恢复�
 
 ## 本地构建
 
-准备 JDK 25、Node.js 和 npm。前端所用版本见 [package.json](ordivane-web/package.json)，后端的 Maven 版本由 Wrapper 固定。在仓库根目录使用 PowerShell 构建：
+准备 JDK 26、Node.js 和 npm。前端所用版本见 [package.json](ordivane-web/package.json)，后端的 Maven 版本由 Wrapper 固定。在仓库根目录使用 PowerShell 构建：
 
 ```powershell
 ./mvnw.cmd -B -DskipTests package

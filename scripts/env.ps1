@@ -1,11 +1,11 @@
 # 在项目根目录点源此脚本；所有设置仅作用于当前 PowerShell 进程。
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
-$jdkDirectory = Get-ChildItem "$PSScriptRoot/.tools/jdk" -Directory | Select-Object -First 1
+$jdkHome = Join-Path $PSScriptRoot '.tools/jdk/jdk-26.0.2.1+1'
 $nodeDirectory = Get-ChildItem "$PSScriptRoot/.tools/node" -Directory | Select-Object -First 1
-if (-not $jdkDirectory -or -not $nodeDirectory) { throw '请先按 docs/toolchain.md 安装项目工具链。' }
-$env:JAVA_HOME = $jdkDirectory.FullName
-$env:PATH = "$($jdkDirectory.FullName)/bin;$($nodeDirectory.FullName);$env:PATH"
+if (-not (Test-Path -LiteralPath "$jdkHome/bin/javac.exe" -PathType Leaf) -or -not $nodeDirectory) { throw '请先按 docs/toolchain.md 安装项目工具链。' }
+$env:JAVA_HOME = $jdkHome
+$env:PATH = "$jdkHome/bin;$($nodeDirectory.FullName);$env:PATH"
 $env:MAVEN_USER_HOME = "$projectRoot/.mvn"
 $env:GRAPHIFY_NO_AUTO_REFRESH = '1'
 $env:npm_config_cache = "$PSScriptRoot/.tools/npm-cache"
